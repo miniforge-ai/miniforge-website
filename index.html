@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>miniforge.ai — an industrial software factory that fits on your desk</title>
+  <meta name="description" content="Miniforge is an autonomous software factory: write a spec, get a pull request. Local-first, governed, Apache 2.0.">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="frame">
+    <a class="brand" href="/">
+      <svg class="mark" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="#ff5e1a" d="M12 1.5 13.2 4 16 4.6 13.9 6.4 14.4 9.2 12 7.8 9.6 9.2 10.1 6.4 8 4.6 10.8 4Z"/>
+        <path fill="#dad9d9" d="M2.5 11h12.5c2.8 0 5.2 1 6.5 2.6-1.8.6-3.9.9-6 .9h-2v2.2c0 1.2.8 2.2 2 2.7v1.6H8v-1.6c1.2-.5 2-1.5 2-2.7v-2.2H7L5 13H2.5Z"/>
+      </svg>
+      <span>miniforge<span class="tld">.ai</span></span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="/miniforge" aria-current="false">Miniforge</a>
+      <a href="/products">Products</a>
+      <a href="/architectures">Architectures</a>
+      <a href="/blog/">Blog</a>
+      <a href="/about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="frame">
+      <span class="plate-label">MINIFORGE.AI <b>//</b> AUTONOMOUS SOFTWARE FACTORY</span>
+      <h1>An industrial software factory that fits <span class="hot">on your desk</span>.</h1>
+      <p class="lede">Write a spec. Get a pull request. Miniforge drives specifications through a governed pipeline — plan, implement, verify, review, release — with policy enforcement at every transition and a full evidence trail.</p>
+      <div class="btn-row">
+        <a class="btn" href="https://github.com/miniforge-ai/miniforge">GitHub →</a>
+        <a class="btn ghost" href="https://github.com/miniforge-ai/miniforge/blob/main/docs/quickstart.md">Quickstart →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-label="The production line">
+    <div class="frame">
+      <div class="pipeline-wrap">
+        <svg viewBox="0 0 1280 210" role="img" aria-label="Production line: a spec enters, passes through explore, plan, implement, verify, review and release stations with a gate between each, and exits as a pull request watched by the observe loop.">
+          <line class="pl-rail" x1="100" y1="100" x2="1190" y2="100"/>
+          <path class="pl-heat" d="M100 100 H1190"/>
+
+          <g class="pl-end">
+            <rect x="10" y="72" width="90" height="56"/>
+            <text x="55" y="95" text-anchor="middle">SPEC</text>
+            <text x="55" y="113" text-anchor="middle" font-size="9">IN</text>
+          </g>
+
+          <g class="pl-station">
+            <rect x="130" y="68" width="140" height="64"/>
+            <text x="200" y="95" text-anchor="middle">EXPLORE</text>
+            <text class="sub" x="200" y="115" text-anchor="middle">CODEBASE + KB</text>
+          </g>
+          <g class="pl-station">
+            <rect x="310" y="68" width="140" height="64"/>
+            <text x="380" y="95" text-anchor="middle">PLAN</text>
+            <text class="sub" x="380" y="115" text-anchor="middle">SPEC → TASK DAG</text>
+          </g>
+          <g class="pl-station">
+            <rect x="490" y="68" width="140" height="64"/>
+            <text x="560" y="95" text-anchor="middle">IMPLEMENT</text>
+            <text class="sub" x="560" y="115" text-anchor="middle">AGENT SESSIONS</text>
+          </g>
+          <g class="pl-station">
+            <rect x="670" y="68" width="140" height="64"/>
+            <text x="740" y="95" text-anchor="middle">VERIFY</text>
+            <text class="sub" x="740" y="115" text-anchor="middle">TESTS + GATES</text>
+          </g>
+          <g class="pl-station">
+            <rect x="850" y="68" width="140" height="64"/>
+            <text x="920" y="95" text-anchor="middle">REVIEW</text>
+            <text class="sub" x="920" y="115" text-anchor="middle">DIFF VS SPEC</text>
+          </g>
+          <g class="pl-station">
+            <rect x="1030" y="68" width="140" height="64"/>
+            <text x="1100" y="95" text-anchor="middle">RELEASE</text>
+            <text class="sub" x="1100" y="115" text-anchor="middle">BRANCH → PR</text>
+          </g>
+
+          <g>
+            <rect class="pl-gate" x="280" y="90" width="20" height="20" transform="rotate(45 290 100)"/>
+            <text class="pl-gate-label" x="290" y="145" text-anchor="middle">GATE</text>
+            <rect class="pl-gate" x="460" y="90" width="20" height="20" transform="rotate(45 470 100)"/>
+            <text class="pl-gate-label" x="470" y="145" text-anchor="middle">GATE</text>
+            <rect class="pl-gate" x="640" y="90" width="20" height="20" transform="rotate(45 650 100)"/>
+            <text class="pl-gate-label" x="650" y="145" text-anchor="middle">GATE</text>
+            <rect class="pl-gate" x="820" y="90" width="20" height="20" transform="rotate(45 830 100)"/>
+            <text class="pl-gate-label" x="830" y="145" text-anchor="middle">GATE</text>
+            <rect class="pl-gate" x="1000" y="90" width="20" height="20" transform="rotate(45 1010 100)"/>
+            <text class="pl-gate-label" x="1010" y="145" text-anchor="middle">GATE</text>
+          </g>
+
+          <rect class="pl-billet" x="94" y="94" width="12" height="12"/>
+
+          <g class="pl-end">
+            <rect x="1190" y="72" width="70" height="56"/>
+            <text x="1225" y="95" text-anchor="middle">PR</text>
+            <text x="1225" y="113" text-anchor="middle" font-size="9">OUT</text>
+          </g>
+          <text class="pl-gate-label" x="1225" y="152" text-anchor="middle">OBSERVE · 72H</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="section seamed" id="principles">
+    <div class="frame">
+      <div class="section-head">
+        <span class="plate-label">OPERATING PRINCIPLES</span>
+        <h2>A factory, not a chatbot.</h2>
+        <p>Miniforge models software delivery as an industrial process. Work is tracked as first-class artifacts, decisions are recorded, and every change flows through explicit quality and safety gates.</p>
+      </div>
+      <ul class="spec-list">
+        <li>
+          <span class="idx">01</span>
+          <span class="name">Local-first</span>
+          <span class="desc">Runs on your machine or inside your network, directly on your repositories. You control where it runs, what it can change, and how far it goes.</span>
+        </li>
+        <li>
+          <span class="idx">02</span>
+          <span class="name">Governed pipeline</span>
+          <span class="desc">No single-prompt magic. Specialized agent roles move work through plan, implement, verify, review and release — with policy enforcement at every transition.</span>
+        </li>
+        <li>
+          <span class="idx">03</span>
+          <span class="name">Evidence trail</span>
+          <span class="desc">Every decision, gate result and release is recorded and traceable. The output is real repositories and real deployments, not demos.</span>
+        </li>
+        <li>
+          <span class="idx">04</span>
+          <span class="name">Meta loop</span>
+          <span class="desc">The factory observes its own failures, reviews and corrections, and uses those signals to improve how it plans, validates and releases work.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section seamed" id="products">
+    <div class="frame">
+      <div class="section-head">
+        <span class="plate-label">PRODUCT LINE</span>
+        <h2>Built in the same forge.</h2>
+      </div>
+      <div class="grid cols-2">
+        <a class="cell cell-link" href="/miniforge">
+          <span class="spec">OSS · Apache 2.0</span>
+          <h3>Miniforge</h3>
+          <p>The autonomous software factory. Spec in, pull request out, governance throughout.</p>
+        </a>
+        <a class="cell cell-link" href="/products">
+          <span class="spec">In development</span>
+          <h3>Fleet, Control &amp; Minibench</h3>
+          <p>Coordination for factories at scale, an operator console, and an evaluation workbench.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section light" id="writing">
+    <div class="frame">
+      <div class="section-head">
+        <span class="plate-label on-light">FROM THE BLOG</span>
+        <h2>Industrializing software.</h2>
+      </div>
+      <div class="post-list">
+        <a class="post-row" href="/blog/orchestration-is-not-the-hard-part">
+          <time datetime="2026-04-13">2026-04-13</time>
+          <span class="t">Orchestration is not the hard part.</span>
+          <span class="go">READ →</span>
+        </a>
+        <a class="post-row" href="/blog/industrializing-software-ai-fourth-industrial-revolution">
+          <time datetime="2025-11-19">2025-11-19</time>
+          <span class="t">Industrializing Software: AI as the catalyst for a fourth industrial revolution.
+            <span class="sub">Some of us will not make it to the other side. Will you?</span></span>
+          <span class="go">READ →</span>
+        </a>
+        <a class="post-row" href="/blog/hand-built-code-is-going-away">
+          <time datetime="2025-10-20">2025-10-20</time>
+          <span class="t">Hand built code is going away, and sooner than any of us who love that art are ready for.
+            <span class="sub">Moving from a world of craft and artistry to CNC machines…</span></span>
+          <span class="go">READ →</span>
+        </a>
+      </div>
+      <p style="margin-top:1.6rem"><a class="btn ghost" href="/blog/">All posts →</a></p>
+    </div>
+  </section>
+
+  <section class="section seamed" id="cta">
+    <div class="frame">
+      <div class="section-head" style="margin-bottom:1.6rem">
+        <span class="plate-label">START</span>
+        <h2>Put a spec on the line.</h2>
+        <p>Miniforge is open source and runs where your code lives.</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn" href="https://github.com/miniforge-ai/miniforge">GitHub →</a>
+        <a class="btn ghost" href="/architectures">See the architecture →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="frame">
+    <div class="title-block">
+      <div class="tb-cell"><span class="k">Project</span><span class="v">miniforge.ai — industrial software factory</span></div>
+      <div class="tb-cell"><span class="k">Rev</span><span class="v">2026.07</span></div>
+      <div class="tb-cell"><span class="k">License</span><span class="v">Apache-2.0</span></div>
+      <div class="tb-cell"><span class="k">Source</span><span class="v"><a href="https://github.com/miniforge-ai/miniforge">github</a></span></div>
+      <div class="tb-cell"><span class="k">Contact</span><span class="v"><a href="mailto:christopher@miniforge.ai">email</a></span></div>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="/miniforge">Miniforge</a>
+      <a href="/products">Products</a>
+      <a href="/architectures">Architectures</a>
+      <a href="/blog/">Blog</a>
+      <a href="/about">About</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

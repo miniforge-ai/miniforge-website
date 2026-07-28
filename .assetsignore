@@ -1,0 +1,8 @@
+node_modules
+posts
+scripts
+package.json
+package-lock.json
+wrangler.toml
+README.md
+.git

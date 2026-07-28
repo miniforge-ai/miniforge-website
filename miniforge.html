@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Miniforge — write a spec, get a pull request</title>
+  <meta name="description" content="Miniforge plans the work, writes the code, runs the tests, reviews itself, and opens a PR. Four nested control loops, policy gates at every transition.">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="frame">
+    <a class="brand" href="/">
+      <svg class="mark" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="#ff5e1a" d="M12 1.5 13.2 4 16 4.6 13.9 6.4 14.4 9.2 12 7.8 9.6 9.2 10.1 6.4 8 4.6 10.8 4Z"/>
+        <path fill="#dad9d9" d="M2.5 11h12.5c2.8 0 5.2 1 6.5 2.6-1.8.6-3.9.9-6 .9h-2v2.2c0 1.2.8 2.2 2 2.7v1.6H8v-1.6c1.2-.5 2-1.5 2-2.7v-2.2H7L5 13H2.5Z"/>
+      </svg>
+      <span>miniforge<span class="tld">.ai</span></span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="/miniforge" aria-current="page">Miniforge</a>
+      <a href="/products">Products</a>
+      <a href="/architectures">Architectures</a>
+      <a href="/blog/">Blog</a>
+      <a href="/about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="frame">
+      <span class="plate-label">UNIT 01 <b>//</b> THE FACTORY</span>
+      <h1>Write a spec. <span class="hot">Get a pull request.</span></h1>
+      <p class="lede">You describe what you want — plain English or structured EDN. Miniforge plans the work, writes the code, runs the tests, reviews itself, and opens a PR. No prompt engineering. No copy-paste. Full SDLC.</p>
+      <div class="btn-row">
+        <a class="btn" href="https://github.com/miniforge-ai/miniforge">GitHub →</a>
+        <a class="btn ghost" href="https://github.com/miniforge-ai/miniforge/blob/main/docs/quickstart.md">Quickstart →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section seamed">
+    <div class="frame">
+      <div class="section-head">
+        <span class="plate-label">PROCESS</span>
+        <h2>The line runs in phases.</h2>
+        <p>A team of specialized agents hands work through the pipeline, like a dev team — with a policy gate at every transition.</p>
+      </div>
+      <ul class="spec-list">
+        <li><span class="idx">01</span><span class="name">Explore</span><span class="desc">Scans the codebase, loads relevant files, queries the knowledge base.</span></li>
+        <li><span class="idx">02</span><span class="name">Plan</span><span class="desc">Decomposes the spec into a task DAG with dependencies and parallel execution.</span></li>
+        <li><span class="idx">03</span><span class="name">Implement</span><span class="desc">Generates code through LLM agent sessions working on your repository.</span></li>
+        <li><span class="idx">04</span><span class="name">Verify</span><span class="desc">Gates: syntax, lint, no-secrets, tests-pass. Failures are repaired automatically, within budget.</span></li>
+        <li><span class="idx">05</span><span class="name">Review</span><span class="desc">Self-reviews the diff against the spec and constraints before anything ships.</span></li>
+        <li><span class="idx">06</span><span class="name">Release</span><span class="desc">Creates the branch, commits, opens the PR with a full description.</span></li>
+        <li><span class="idx">07</span><span class="name">Observe</span><span class="desc">Monitors the PR for up to 72 hours: classifies comments, fixes feedback, answers questions, merges when ready.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section seamed">
+    <div class="frame">
+      <div class="section-head">
+        <span class="plate-label">CONTROL</span>
+        <h2>Four nested loops.</h2>
+      </div>
+      <div class="grid cols-2">
+        <div class="cell">
+          <span class="spec">Team loop</span>
+          <h3>Agents hand off work</h3>
+          <p>Specialized agents collaborate through phases — explore, plan, implement, verify, review, release — each with its own role and its own constraints.</p>
+        </div>
+        <div class="cell">
+          <span class="spec">Inner loop</span>
+          <h3>Generate, validate, repair</h3>
+          <p>Inside each phase the agent generates an artifact, validates it against policy gates, and repairs failures automatically. Budget exhausted → escalate to you.</p>
+        </div>
+        <div class="cell">
+          <span class="spec">Observe loop</span>
+          <h3>The PR is not the end</h3>
+          <p>After release, a monitor polls the PR, classifies comments, fixes change requests, answers questions, and attempts the merge on approval.</p>
+        </div>
+        <div class="cell">
+          <span class="spec">Meta loop</span>
+          <h3>Governance can halt the floor</h3>
+          <p>Meta-agents watch progress, test quality, conflicts and budgets. Any of them can halt the factory. Every decision is observable and produces evidence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section light">
+    <div class="frame">
+      <div class="section-head">
+        <span class="plate-label on-light">SAFETY &amp; GOVERNANCE</span>
+        <h2>Governed at every transition.</h2>
+      </div>
+      <div class="grid cols-3">
+        <div class="cell">
+          <span class="spec">Policy gates</span>
+          <h3>Explicit quality gates</h3>
+          <p>Syntax, lint, secrets, tests, standards — enforced as blocking gates between phases, not suggestions in a prompt.</p>
+        </div>
+        <div class="cell">
+          <span class="spec">Budgets</span>
+          <h3>Hard stops</h3>
+          <p>Token, cost and time limits enforce hard stops. Runaway work escalates to a human instead of burning quota.</p>
+        </div>
+        <div class="cell">
+          <span class="spec">Evidence</span>
+          <h3>Traceable decisions</h3>
+          <p>Every decision produces an evidence bundle. What ran, what passed, what failed, and why — recorded and reviewable.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section seamed">
+    <div class="frame">
+      <div class="section-head" style="margin-bottom:1.6rem">
+        <span class="plate-label">START</span>
+        <h2>Local-first. Apache 2.0.</h2>
+        <p>Runs on your machine or inside your network, directly on your repositories.</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn" href="https://github.com/miniforge-ai/miniforge">GitHub →</a>
+        <a class="btn ghost" href="https://github.com/miniforge-ai/miniforge/blob/main/docs/quickstart.md">Quickstart →</a>
+        <a class="btn ghost" href="/architectures">Architecture →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="frame">
+    <div class="title-block">
+      <div class="tb-cell"><span class="k">Project</span><span class="v">miniforge.ai — industrial software factory</span></div>
+      <div class="tb-cell"><span class="k">Rev</span><span class="v">2026.07</span></div>
+      <div class="tb-cell"><span class="k">License</span><span class="v">Apache-2.0</span></div>
+      <div class="tb-cell"><span class="k">Source</span><span class="v"><a href="https://github.com/miniforge-ai/miniforge">github</a></span></div>
+      <div class="tb-cell"><span class="k">Contact</span><span class="v"><a href="mailto:christopher@miniforge.ai">email</a></span></div>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="/miniforge">Miniforge</a>
+      <a href="/products">Products</a>
+      <a href="/architectures">Architectures</a>
+      <a href="/blog/">Blog</a>
+      <a href="/about">About</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

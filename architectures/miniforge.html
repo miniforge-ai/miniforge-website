@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Miniforge architecture — as-built and target — miniforge.ai</title>
+  <meta name="description" content="The Miniforge software factory drawn twice: the as-built Polylith estate, core loop and integrations, and the target five-plane design — with the delta kept explicit.">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="frame">
+    <a class="brand" href="/">
+      <svg class="mark" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="#ff5e1a" d="M12 1.5 13.2 4 16 4.6 13.9 6.4 14.4 9.2 12 7.8 9.6 9.2 10.1 6.4 8 4.6 10.8 4Z"/>
+        <path fill="#dad9d9" d="M2.5 11h12.5c2.8 0 5.2 1 6.5 2.6-1.8.6-3.9.9-6 .9h-2v2.2c0 1.2.8 2.2 2 2.7v1.6H8v-1.6c1.2-.5 2-1.5 2-2.7v-2.2H7L5 13H2.5Z"/>
+      </svg>
+      <span>miniforge<span class="tld">.ai</span></span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="/miniforge">Miniforge</a>
+      <a href="/products">Products</a>
+      <a href="/architectures" aria-current="page">Architectures</a>
+      <a href="/blog/">Blog</a>
+      <a href="/about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="article-hero">
+    <div class="frame">
+      <span class="plate-label">DWG A1–A3 · T1–T3 <b>//</b> SOURCE: <b>github.com/miniforge-ai/miniforge</b></span>
+      <h1>Miniforge — the factory, drawn twice.</h1>
+      <p class="meta">docs/architecture/diagrams · six panels · one palette and legend</p>
+    </div>
+  </section>
+
+  <article class="article">
+    <div class="frame">
+      <p>Two suites, one palette and legend. Solid strokes mean the thing exists and works; dashed means partial or scaffold; dotted means spec-only. The point of drawing both architectures side by side is the delta — the last panel carries it explicitly, along with the known contradictions the design reviews have on record.</p>
+
+      <h2>As-built — what the code does today</h2>
+      <p>Miniforge is a Clojure Polylith workspace: bases, component subsystems and deployable projects, consumed by sibling products. The core loop drives spec in, PR out: a work-spec kanban feeds a workflow FSM, a DAG orchestrator schedules phases, phase interceptors run agents against LLM backends, and gates collect evidence on the way to release.</p>
+
+      <figure class="diagram">
+        <img src="/assets/diagrams/a1-estate.svg" alt="A1 — The Polylith estate: bases, component subsystems, deployable projects and consumers." loading="lazy">
+        <figcaption>A1 — The Polylith estate</figcaption>
+      </figure>
+      <figure class="diagram">
+        <img src="/assets/diagrams/a2-core-loop.svg" alt="A2 — The core loop: spec in, PR out, from work-spec kanban through workflow FSM, DAG orchestrator, agents and gates to release." loading="lazy">
+        <figcaption>A2 — The core loop: spec in, PR out</figcaption>
+      </figure>
+      <figure class="diagram">
+        <img src="/assets/diagrams/a3-data-integrations.svg" alt="A3 — Persistence and integrations: local state, golden fixtures, event-stream archive, LLM backends, git, OCI runtimes, MCP surfaces and ETL connectors." loading="lazy">
+        <figcaption>A3 — Persistence &amp; integrations</figcaption>
+      </figure>
+
+      <h2>Target — what the specs design</h2>
+      <p>The target architecture separates five planes — the OSS factory engine, an operator console, Fleet coordination and governance, Data Foundry, and the evaluation seam — across deployment shapes from a single workstation to on-prem Kubernetes. Runs form a hierarchy (spec → run → workflow DAG → task nodes and agent sessions) governed by inner, outer and meta loops, with policy packs compiled into gates and evidence.</p>
+
+      <figure class="diagram">
+        <img src="/assets/diagrams/t1-five-planes.svg" alt="T1 — Five planes and deployment shapes: factory engine, operator console, Fleet, Data Foundry and the eval seam." loading="lazy">
+        <figcaption>T1 — Five planes &amp; deployment shapes</figcaption>
+      </figure>
+      <figure class="diagram">
+        <img src="/assets/diagrams/t2-runs-loops.svg" alt="T2 — Run hierarchy, loops and governance: spec to run to workflow DAG to task nodes; inner, outer and meta loops; policy packs to gates to evidence." loading="lazy">
+        <figcaption>T2 — Run hierarchy, loops, governance</figcaption>
+      </figure>
+      <figure class="diagram">
+        <img src="/assets/diagrams/t3-delta.svg" alt="T3 — Built-versus-unbuilt delta and contradiction register: spec-by-spec completion, subsystem status board, and recorded contradictions." loading="lazy">
+        <figcaption>T3 — Built-vs-unbuilt delta &amp; contradiction register</figcaption>
+      </figure>
+
+      <h2>Why keep the delta on record</h2>
+      <p>Most architecture documents describe an idealized system that the code quietly stopped resembling. These are maintained as a pair on purpose: the as-built suite is corrected against source, the target suite cites its specs, and the delta panel records what is unbuilt and where the design reviews found contradictions. When the factory changes itself, the drawings change with it — through the same pipeline as any other change.</p>
+
+      <p><a href="https://github.com/miniforge-ai/miniforge/tree/main/docs/architecture/diagrams">View the source diagrams on GitHub →</a></p>
+    </div>
+  </article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="frame">
+    <div class="title-block">
+      <div class="tb-cell"><span class="k">Project</span><span class="v">miniforge.ai — industrial software factory</span></div>
+      <div class="tb-cell"><span class="k">Rev</span><span class="v">2026.07</span></div>
+      <div class="tb-cell"><span class="k">License</span><span class="v">Apache-2.0</span></div>
+      <div class="tb-cell"><span class="k">Source</span><span class="v"><a href="https://github.com/miniforge-ai/miniforge">github</a></span></div>
+      <div class="tb-cell"><span class="k">Contact</span><span class="v"><a href="mailto:christopher@miniforge.ai">email</a></span></div>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="/miniforge">Miniforge</a>
+      <a href="/products">Products</a>
+      <a href="/architectures">Architectures</a>
+      <a href="/blog/">Blog</a>
+      <a href="/about">About</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

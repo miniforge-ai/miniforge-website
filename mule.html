@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design mule — miniforge.ai</title>
+  <meta name="description" content="Specimen sheet: every token and component in the miniforge.ai design system, on one page.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1px; background: var(--seam); border: 1px solid var(--seam); }
+    .swatch { padding: 1.1rem; min-height: 7rem; display: flex; flex-direction: column; justify-content: flex-end; }
+    .swatch .n { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; }
+    .swatch .x { font-family: var(--mono); font-size: 0.68rem; opacity: 0.7; }
+    .spec-note { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gauge); margin: 2.6rem 0 0.9rem; border-bottom: 1px solid var(--seam); padding-bottom: 0.4rem; }
+    .light .spec-note { color: var(--gauge-ink); border-color: #d2d2d0; }
+    .type-row { display: grid; grid-template-columns: 11rem 1fr; gap: 1.2rem; align-items: baseline; padding: 0.7rem 0; border-bottom: 1px solid var(--seam); }
+    .type-row .tag { font-family: var(--mono); font-size: 0.7rem; color: var(--gauge); }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="frame">
+    <a class="brand" href="/">
+      <svg class="mark" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="#ff5e1a" d="M12 1.5 13.2 4 16 4.6 13.9 6.4 14.4 9.2 12 7.8 9.6 9.2 10.1 6.4 8 4.6 10.8 4Z"/>
+        <path fill="#dad9d9" d="M2.5 11h12.5c2.8 0 5.2 1 6.5 2.6-1.8.6-3.9.9-6 .9h-2v2.2c0 1.2.8 2.2 2 2.7v1.6H8v-1.6c1.2-.5 2-1.5 2-2.7v-2.2H7L5 13H2.5Z"/>
+      </svg>
+      <span>miniforge<span class="tld">.ai</span></span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="/miniforge">Miniforge</a>
+      <a href="/products">Products</a>
+      <a href="/architectures">Architectures</a>
+      <a href="/blog/">Blog</a>
+      <a href="/about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" style="padding-bottom:1rem">
+    <div class="frame">
+      <span class="plate-label">TEST MULE <b>//</b> SPECIMEN SHEET · NOT LINKED FROM NAV</span>
+      <h1>Every part, <span class="hot">one bench</span>.</h1>
+      <p class="lede">The full design system on a single page: tokens, type, and every component in both dark and light finishes. If it is not on this sheet, it is not in the system.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="frame">
+
+      <p class="spec-note">01 · PALETTE — KEPT FROM THE ORIGINAL SITE, EXTENDED INTO STEEL</p>
+      <div class="swatches">
+        <div class="swatch" style="background:#ff5e1a;color:#fff"><span class="n">--forge</span><span class="x">#FF5E1A · brand orange</span></div>
+        <div class="swatch" style="background:#ff8a50;color:#131518"><span class="n">--ember</span><span class="x">#FF8A50 · hover glow</span></div>
+        <div class="swatch" style="background:#ffb347;color:#131518"><span class="n">--heat</span><span class="x">#FFB347 · billet</span></div>
+        <div class="swatch" style="background:#131518;color:#dad9d9;border:1px solid #2e343b"><span class="n">--ingot</span><span class="x">#131518 · page</span></div>
+        <div class="swatch" style="background:#1c2024;color:#dad9d9"><span class="n">--steel</span><span class="x">#1C2024 · panel</span></div>
+        <div class="swatch" style="background:#24292e;color:#dad9d9"><span class="n">--plate</span><span class="x">#24292E · raised</span></div>
+        <div class="swatch" style="background:#2e343b;color:#dad9d9"><span class="n">--seam</span><span class="x">#2E343B · borders</span></div>
+        <div class="swatch" style="background:#dad9d9;color:#16181b"><span class="n">--mill</span><span class="x">#DAD9D9 · brand gray</span></div>
+        <div class="swatch" style="background:#f4f4f3;color:#16181b"><span class="n">--paper</span><span class="x">#F4F4F3 · reading</span></div>
+        <div class="swatch" style="background:#9aa2ab;color:#16181b"><span class="n">--gauge</span><span class="x">#9AA2AB · secondary</span></div>
+      </div>
+
+      <p class="spec-note">02 · TYPE — SPACE GROTESK / IBM PLEX SANS / IBM PLEX MONO</p>
+      <div class="type-row"><span class="tag">h1 · display 700</span><h1 style="font-size:clamp(2rem,4vw,3.2rem)">Forged, not prompted.</h1></div>
+      <div class="type-row"><span class="tag">h2 · display 700</span><h2>A factory, not a chatbot.</h2></div>
+      <div class="type-row"><span class="tag">h3 · display 500</span><h3>Generate, validate, repair</h3></div>
+      <div class="type-row"><span class="tag">lede · plex sans</span><p class="lede">Write a spec. Get a pull request. Governance throughout.</p></div>
+      <div class="type-row"><span class="tag">body · plex sans</span><p style="max-width:60ch">Miniforge models software delivery as an industrial process. Work is tracked as first-class artifacts, decisions are recorded, and every change flows through explicit gates.</p></div>
+      <div class="type-row"><span class="tag">mono label</span><span style="font-family:var(--mono);font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase">TESTS + GATES · BRANCH → PR · 72H</span></div>
+
+      <p class="spec-note">03 · DATA-PLATE LABELS</p>
+      <p>
+        <span class="plate-label">MINIFORGE.AI <b>//</b> AUTONOMOUS SOFTWARE FACTORY</span>&nbsp;
+        <span class="plate-label">DWG A1–A3 · T1–T3</span>&nbsp;
+        <span class="plate-label">GATE RESULT <b>//</b> 404</span>
+      </p>
+
+      <p class="spec-note">04 · BUTTONS</p>
+      <div class="btn-row">
+        <a class="btn" href="#">Primary →</a>
+        <a class="btn ghost" href="#">Ghost →</a>
+      </div>
+
+      <p class="spec-note">05 · CELL GRID (DARK)</p>
+      <div class="grid cols-3">
+        <div class="cell"><span class="spec">Unit 01 · Available</span><h3>Standard cell</h3><p>Body copy in a dark cell. Secondary color, 0.95rem.</p></div>
+        <a class="cell cell-link" href="#"><span class="spec">Linked</span><h3>Hover for outline</h3><p>Linked cells outline in forge orange on hover.</p></a>
+        <div class="cell"><span class="spec">In development</span><h3>Third cell</h3><p>Grid gap is a 1px seam, not a shadow.</p></div>
+      </div>
+
+      <p class="spec-note">06 · SPEC LIST (NUMBERED PROCESS)</p>
+      <ul class="spec-list">
+        <li><span class="idx">01</span><span class="name">Explore</span><span class="desc">Scans the codebase, loads relevant files, queries the knowledge base.</span></li>
+        <li><span class="idx">02</span><span class="name">Plan</span><span class="desc">Decomposes the spec into a task DAG with dependencies.</span></li>
+      </ul>
+
+      <p class="spec-note">07 · PIPELINE SCHEMATIC (SIGNATURE, ANIMATED)</p>
+      <div class="pipeline-wrap">
+        <svg viewBox="0 0 1280 210" role="img" aria-label="Production line schematic specimen.">
+          <line class="pl-rail" x1="100" y1="100" x2="1190" y2="100"/>
+          <path class="pl-heat" d="M100 100 H1190"/>
+          <g class="pl-end"><rect x="10" y="72" width="90" height="56"/><text x="55" y="95" text-anchor="middle">SPEC</text><text x="55" y="113" text-anchor="middle" font-size="9">IN</text></g>
+          <g class="pl-station"><rect x="130" y="68" width="140" height="64"/><text x="200" y="95" text-anchor="middle">EXPLORE</text><text class="sub" x="200" y="115" text-anchor="middle">CODEBASE + KB</text></g>
+          <g class="pl-station"><rect x="310" y="68" width="140" height="64"/><text x="380" y="95" text-anchor="middle">PLAN</text><text class="sub" x="380" y="115" text-anchor="middle">SPEC → TASK DAG</text></g>
+          <g class="pl-station"><rect x="490" y="68" width="140" height="64"/><text x="560" y="95" text-anchor="middle">IMPLEMENT</text><text class="sub" x="560" y="115" text-anchor="middle">AGENT SESSIONS</text></g>
+          <g class="pl-station"><rect x="670" y="68" width="140" height="64"/><text x="740" y="95" text-anchor="middle">VERIFY</text><text class="sub" x="740" y="115" text-anchor="middle">TESTS + GATES</text></g>
+          <g class="pl-station"><rect x="850" y="68" width="140" height="64"/><text x="920" y="95" text-anchor="middle">REVIEW</text><text class="sub" x="920" y="115" text-anchor="middle">DIFF VS SPEC</text></g>
+          <g class="pl-station"><rect x="1030" y="68" width="140" height="64"/><text x="1100" y="95" text-anchor="middle">RELEASE</text><text class="sub" x="1100" y="115" text-anchor="middle">BRANCH → PR</text></g>
+          <g>
+            <rect class="pl-gate" x="280" y="90" width="20" height="20" transform="rotate(45 290 100)"/><text class="pl-gate-label" x="290" y="145" text-anchor="middle">GATE</text>
+            <rect class="pl-gate" x="460" y="90" width="20" height="20" transform="rotate(45 470 100)"/><text class="pl-gate-label" x="470" y="145" text-anchor="middle">GATE</text>
+            <rect class="pl-gate" x="640" y="90" width="20" height="20" transform="rotate(45 650 100)"/><text class="pl-gate-label" x="650" y="145" text-anchor="middle">GATE</text>
+            <rect class="pl-gate" x="820" y="90" width="20" height="20" transform="rotate(45 830 100)"/><text class="pl-gate-label" x="830" y="145" text-anchor="middle">GATE</text>
+            <rect class="pl-gate" x="1000" y="90" width="20" height="20" transform="rotate(45 1010 100)"/><text class="pl-gate-label" x="1010" y="145" text-anchor="middle">GATE</text>
+          </g>
+          <rect class="pl-billet" x="94" y="94" width="12" height="12"/>
+          <g class="pl-end"><rect x="1190" y="72" width="70" height="56"/><text x="1225" y="95" text-anchor="middle">PR</text><text x="1225" y="113" text-anchor="middle" font-size="9">OUT</text></g>
+          <text class="pl-gate-label" x="1225" y="152" text-anchor="middle">OBSERVE · 72H</text>
+        </svg>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section light">
+    <div class="frame">
+
+      <p class="spec-note">08 · LIGHT FINISH — PLATE LABEL, CELLS, POST ROWS</p>
+      <p><span class="plate-label on-light">FROM THE BLOG</span></p>
+      <div class="grid cols-2" style="margin-bottom:2rem">
+        <div class="cell"><span class="spec">Policy gates</span><h3>Light cell</h3><p>Same anatomy, paper finish.</p></div>
+        <div class="cell"><span class="spec">Evidence</span><h3>Second cell</h3><p>Seams turn to #d2d2d0 on light.</p></div>
+      </div>
+      <div class="post-list">
+        <a class="post-row" href="#">
+          <time datetime="2026-04-13">2026-04-13</time>
+          <span class="t">Post row with subtitle
+            <span class="sub">The teaser line sits under the title in body face.</span></span>
+          <span class="go">READ →</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="article-hero">
+    <div class="frame">
+      <span class="plate-label">LOG ENTRY <b>//</b> SPECIMEN</span>
+      <h1>Article typography, all elements.</h1>
+      <p class="meta"><time datetime="2026-07-27">2026-07-27</time> · Specimen</p>
+    </div>
+  </section>
+  <article class="article">
+    <div class="frame">
+      <p>Lead paragraph at 68ch measure on paper. Body is IBM Plex Sans at 1.0625rem, line-height 1.65. Links render <a href="#">in forge orange</a>, <strong>strong is 600</strong>, <em>emphasis is italic</em>.</p>
+      <h2>Second-level heading</h2>
+      <p>Paragraph after a heading. Inline <code>code spans</code> get a light plate behind Plex Mono.</p>
+      <h3>Third-level heading</h3>
+      <blockquote><p>Blockquotes carry a forge-orange rule and italic ink — used for the load-bearing claim in a post.</p></blockquote>
+      <ol>
+        <li>Ordered lists for sequences that are real sequences.</li>
+        <li>Second item with a <a href="#">link</a>.</li>
+      </ol>
+      <ul>
+        <li>Unordered for everything else.</li>
+        <li>Second item.</li>
+      </ul>
+      <pre><code>;; code blocks: dark ingot plate inside the paper article
+(defn gate-pass? [evidence]
+  (every? :passed? (:gates evidence)))</code></pre>
+      <table>
+        <thead><tr><th>Gate</th><th>Result</th><th>Evidence</th></tr></thead>
+        <tbody>
+          <tr><td>lint</td><td>pass</td><td>0 warnings</td></tr>
+          <tr><td>tests</td><td>pass</td><td>412/412</td></tr>
+        </tbody>
+      </table>
+      <hr>
+      <p>Horizontal rule above. Diagram figure below.</p>
+      <figure class="diagram">
+        <img src="/assets/diagrams/a2-core-loop.svg" alt="Specimen diagram: the core loop." loading="lazy">
+        <figcaption>A2 — Specimen figure with mono caption</figcaption>
+      </figure>
+    </div>
+  </article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="frame">
+    <div class="title-block">
+      <div class="tb-cell"><span class="k">Project</span><span class="v">miniforge.ai — design mule</span></div>
+      <div class="tb-cell"><span class="k">Rev</span><span class="v">2026.07</span></div>
+      <div class="tb-cell"><span class="k">License</span><span class="v">Apache-2.0</span></div>
+      <div class="tb-cell"><span class="k">Source</span><span class="v"><a href="https://github.com/miniforge-ai/miniforge-website">github</a></span></div>
+      <div class="tb-cell"><span class="k">Contact</span><span class="v"><a href="mailto:christopher@miniforge.ai">email</a></span></div>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="/miniforge">Miniforge</a>
+      <a href="/products">Products</a>
+      <a href="/architectures">Architectures</a>
+      <a href="/blog/">Blog</a>
+      <a href="/about">About</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

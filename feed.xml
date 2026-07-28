@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>miniforge.ai — Industrializing software</title>
+    <link>https://miniforge.ai/blog/</link>
+    <atom:link href="https://miniforge.ai/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Writing on the shift from craft to industrial process — governance, autonomous delivery, and the machines that make the machines.</description>
+    <language>en</language>
+    <lastBuildDate>Mon, 13 Apr 2026 12:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Orchestration is not the hard part.</title>
+      <link>https://miniforge.ai/blog/orchestration-is-not-the-hard-part</link>
+      <guid isPermaLink="true">https://miniforge.ai/blog/orchestration-is-not-the-hard-part</guid>
+      <pubDate>Mon, 13 Apr 2026 12:00:00 GMT</pubDate>
+      <description>Code was never the bottleneck.</description>
+      <content:encoded><![CDATA[<h2><em>Code was never the bottleneck.</em></h2>
+<p>I’ve been thinking about a question that’s floating around in conversations everywhere right now:</p>
+<p><strong>What are you going to do when what you do is gone?</strong></p>
+<p>You can see it splitting the noosphere in real time. I considered it for a while. For many, it’s hype. AI is terrible at real world problems, has too many hallucinations, will run out of energy, etc. etc. I’m not here to litigate the hype or the hype around how terrible it really is. I’m firmly in the camp that the answer to that question does not matter. Software is industrializing—and bargaining with the trillions of reasons it <em>won’t</em> is a fool’s errand. It will. The people writing your paychecks, funding your startups, purchasing your politicians .. will make sure it succeeds. I&#39;ve even blogged about it before:</p>
+<ul>
+<li><a href="https://miniforge.ai/blog/ai-will-slow-you-down-until-it-doesnt">AI will slow you down .. until it doesn&#39;t</a></li>
+<li><a href="https://miniforge.ai/blog/hand-built-code-is-going-away">Hand built coding is going away...</a></li>
+<li><a href="https://miniforge.ai/blog/industrializing-software-ai-fourth-industrial-revolution">Industrializing Software: AI as the catalyst for a fourth industrial revolution.</a></li>
+</ul>
+<p>So .. AI is transforming how software gets built. I did know this. I have a degree in expert systems, had spent a year and a half working on EngrammicAI. I wrote the above.</p>
+<p>.. but that isn&#39;t <em>transformative</em>. To be sure, those things felt transformative at the time .. but the scale was wrong.</p>
+<p>That hit me around December, with the first real agentic models. The understanding that I was moving slow relative to oncoming change. Scratch that, <em>I was standing still</em>. The change was too big to comprehend and I was stuck processing instead of moving. And like natural events that are too large for you to scale properly .. the ones that seem slow and then arrive all at once .. I needed to <em><strong>move</strong></em>.</p>
+<p>That is the much harder hitting shift. That <em>movement</em> is through a loss of identity. One I felt when I was ghosted off by Salesforce. That same kind of loss, the disanchoring of your identity you feel when what was your life is suddenly gone. Your mind rationalizes, keeps you stuck. <em>You have to let go</em> and <strong>move</strong>.</p>
+<p>You don’t just let go of typing code, of prepping documents, of being the smart person solving problems. <strong>You let go of identity.</strong></p>
+<p>“I have an architect hat.” “I’m the best at X, Y, or Z.”</p>
+<p>So yes, <strong>move</strong>.</p>
+<h2><strong>The first jump: <em>the Yeet Machine</em> (tm)</strong></h2>
+<p><em><strong>.. unblocking creativity and a path to moving</strong></em></p>
+<p><em>Move.</em> But how? To really move at this speed I needed a my own software factory, which gave me a target. Two reasons, <strong>one</strong> -- the new set of models looked like pure creative leverage to me. Build faster. Try more ideas. Ship more experiments. Yeet more things into the void and see what sticks.</p>
+<p><strong>Two</strong>, I wanted to be the one building the machines that made machines. Industrialization means I can be a factory worker (if I am lucky), or I can make the machines the factory uses. I am choosing the latter. It may not work, but that bet was the genesis of Miniforge.</p>
+<p>A personal Yeet Machine (tm) <g> gave me a means to bring a backlog of ideas into existence <strong>now</strong>. With the <em>marginal cost of code</em> is collapsing toward zero, products I have wanted to create for years but did not have time or resources to execute on could be yeeted into existence.</p>
+<p>So yes: Miniforge started as my own “yeet machine.”</p>
+<p>And then it became something more.</p>
+<h3><strong>A <em>governed</em> Yeet Machine</strong></h3>
+<p>For the last decade I’ve been brought into companies to redesign how they build and ship software:</p>
+<ul>
+<li>fix broken CI/CD systems</li>
+<li>refactor the SDLC and stabilize release discipline</li>
+<li>scale the company and it&#39;s means of delivery</li>
+<li>recover reliability and velocity without trading off safety</li>
+<li>make delivery legible to the business again</li>
+</ul>
+<p><em>When you’ve done that enough times, you stop seeing “code” as the hard part.</em></p>
+<p>And I realized something:</p>
+<blockquote>
+<p>‍<strong>The industry is focused on agent orchestration</strong></p>
+<p><strong>...but agent orchestration is not the hard part.</strong></p>
+</blockquote>
+<p>If we had told devs at any point in the industries history: &quot;Look you don&#39;t have to do any testing, you don&#39;t have to do any compliance, you have zero security,&quot; .. they could yeet code like crazy into the void. <strong>Developers</strong> <em>with no guardrails</em> <strong>can ship shockingly fast</strong>.</p>
+<p>So yes… those teams would yeet code at light speed into your customers hands. CEO&#39;s and Founders would stand in amazement. Then slowly, and then all at once .. what you’d notice wouldn’t be “<strong>wow</strong>, humans are <em>amazingly</em> fast.”</p>
+<p>You’d notice:</p>
+<ul>
+<li>outages</li>
+<li>customer losses</li>
+<li>regressions</li>
+<li>breached trust</li>
+<li>a business sliding into entropy</li>
+</ul>
+<p>Because what makes your widget a <strong>product</strong> isn’t the code. It’s the governed delivery system around it.</p>
+<h3><strong>AI + ? == Profit</strong></h3>
+<p><strong>Governance</strong>. That is how you get from widget to product. How you get from AI to Profit.</p>
+<p>That&#39;s the ?.</p>
+<blockquote>
+<p><strong>Profit comes from governed delivery: legible, reviewable, controllable execution across real repositories—at speed—without overwhelming humans into routing around your controls.</strong></p>
+</blockquote>
+<p>You can’t just yeet a widget into being and call it a product. A product is a widget that has survived the rules of the business:</p>
+<ul>
+<li>architecture constraints</li>
+<li>security posture</li>
+<li>compliance requirements</li>
+<li>operational standards</li>
+<li>release gates</li>
+<li>rollback planning</li>
+<li>evidence and traceability</li>
+</ul>
+<p>There’s immense pressure right now to “go faster with AI.”</p>
+<p>What breaks first won’t be your engineering team (at least not the way people think). It won’t be product managers shipping prompts. It will be your <em>rule sets</em>.</p>
+<p>Your <em>policies</em>.</p>
+<p>Everything that slows down the rocket ship.</p>
+<p>Humans get overwhelmed. And when they get overwhelmed, controls become optional.</p>
+<p>At that point you just <em>ship;</em> but you’re no longer shipping a product. You’re shipping half-formed widgets into customer hands and hoping the universe is kind.</p>
+<p>That’s not leverage. That’s accelerated <em><strong>entropy</strong></em>.</p>
+<h2><strong>Introducing Miniforge (Open Source)</strong></h2>
+<p>Write a spec. Get a pull request.</p>
+<p>Not a diff. Not a suggestion. A governed, evidence-bearing, review-ready pull request that was driven through the same gauntlet your team would run it through — <strong>plan, implement, verify, review, release</strong> — except <em>autonomously</em>, with policy enforcement at every transition and a full audit trail of why every decision was made.</p>
+<p>Miniforge is 90 components built in Clojure on the Polylith architecture. The distributed CLI ships on Babashka for instant startup with no JVM boot penalty. It is organized as three products on a shared kernel:</p>
+<ul>
+<li><strong>MiniForge Core.</strong> The governed workflow engine. Six normative specifications (N1-N6), written to RFC 2119 rigor, define the contracts for architecture, workflow execution, event streaming, policy enforcement, interfaces, and evidence. This is the engine contract that everything else builds on.</li>
+<li><strong>Miniforge.</strong> The autonomous software factory for SDLC. Takes a spec and drives it through: Plan -&gt; Design -&gt; Implement -&gt; Verify -&gt; Review -&gt; Release. Each phase is an autonomous LLM agent. Each transition is gated by policy. Each decision is traced.</li>
+<li><strong>Data Foundry.</strong> A generic ETL framework on the same kernel. Connectors for EDGAR, GitHub, GitLab, Jira, HTTP, Excel, and flat files. Same governance model, different domain.</li>
+</ul>
+<p>The pipeline is not aspirational. It runs. Here is what actually happens when you feed it a spec:</p>
+<ol>
+<li><strong>Plan —</strong> decomposes intent into a DAG of tasks with topological ordering</li>
+<li><strong>Implement —</strong> LLM agents write code against the plan, selecting from a 16-model registry (Anthropic, OpenAI, Google, open-source) based on task classification</li>
+<li><strong>Verify —</strong> inner validate/repair loop: lint, test, coverage, no-secrets. Failures are classified, diagnosed, and self-healed before moving forward</li>
+<li><strong>Review —</strong> semantic review against the original spec intent, not just &quot;does the code compile&quot;</li>
+<li><strong>Release —</strong> PR creation with evidence bundle: provenance chain, policy gate results, validation outcomes, decision trace</li>
+</ol>
+<p>Every phase emits to an append-only event stream (in-process pub/sub + WebSocket). You can watch it live in the TUI, query it through the CLI, or consume it through the REST API. Three interfaces ship: CLI, TUI, and an LSP/MCP bridge.</p>
+<h3><strong>What “governed” means here</strong></h3>
+<p>Governed does not mean &quot;slow.&quot;</p>
+<p>It means:</p>
+<ul>
+<li>the system can move fast without silently bypassing guardrails</li>
+<li>intent is enforced semantically, not cosmetically</li>
+<li>execution produces evidence, not just output</li>
+</ul>
+<p>Policy is not a checklist bolted on at the end. It is a five-layer validation taxonomy enforced at every gate:</p>
+<ul>
+<li><strong>L0 Syntax</strong> — does it parse</li>
+<li><strong>L1 Semantic</strong> — does it match intent (IMPORT/CREATE/UPDATE/DESTROY/REFACTOR/MIGRATE)</li>
+<li><strong>L2 Policy</strong> — does it comply with policy packs (pluggable, versioned, signed)</li>
+<li><strong>L3 Operational</strong> — does it meet SLOs for the workflow tier</li>
+<li><strong>L4 Authorization</strong> — is the agent permitted to take this action at this trust level</li>
+</ul>
+<p>When something fails, it does not just fail. Failures are classified into a canonical taxonomy, diagnosed, and routed to the repair loop — or escalated to a human with full context about what happened and why.</p>
+<p>It is the difference between: &quot;the model wrote a bunch of code&quot;</p>
+<p>and</p>
+<p>&quot;we can ship this change confidently, and prove why.&quot;</p>
+<h3><strong>What ships in the OSS release</strong></h3>
+<p>The full engine. Locally. End-to-end.</p>
+<ul>
+<li><strong>Workflow engin</strong>e — DAG executor with topological ordering, frontier computation, inner validate/repair loops, and workflow chaining</li>
+<li><strong>Phase agents</strong> — Plan, Implement, Verify, Review, Release. Each phase has defined inputs, outputs, and gates per N2</li>
+<li><strong>Policy-as-code</strong> — pluggable policy packs with gate enforcement, semantic intent validation, and violation taxonomy with auto-fix capabilities</li>
+<li><strong>Evidence bundles</strong> — every workflow produces a provenance-traced evidence bundle: intent, phases, validations, outcome. Queryable. Auditable</li>
+<li><strong>Event stream</strong> — append-only, causally ordered, replayable. Powers live TUI, REST API, and future analytics</li>
+<li><strong>Intelligent model selection</strong> — 16-model registry across four providers. Task classification drives model choice, not config files</li>
+<li><strong>Self-healing</strong> — failure classification, automatic diagnosis, repair strategies. The inner loop fixes what it can before escalating</li>
+<li><strong>Three interfaces</strong> — CLI (seven command namespaces), TUI (workflow list, detail, evidence viewer, artifact browser), LSP/MCP bridge</li>
+<li><strong>Data Foundry</strong> — ETL framework with connectors for EDGAR, GitHub, GitLab, Jira, HTTP, Excel, flat files. Same governance, different domain</li>
+<li><strong>10 specifications</strong> — six core (complete), four extension (draft). These are not documentation. They are the implementation contracts, enforced by schema validation, golden-file tests, and gate checks</li>
+</ul>
+<p><strong>If you can&#39;t run it locally and see the whole loop, it&#39;s not a factory. It&#39;s a demo.</strong></p>
+<h3><strong>Getting started</strong></h3>
+<p><strong>- Repo:</strong> <a href="https://github.com/miniforge-ai/miniforge"><strong>https://github.com/miniforge-ai/miniforge</strong></a></p>
+<p><strong>- Docs:</strong> <a href="https://github.com/miniforge-ai/miniforge/tree/main/docs"><strong>https://github.com/miniforge-ai/miniforge/tree/main/docs</strong></a></p>
+<p><strong>- Quickstart:</strong> <a href="https://github.com/miniforge-ai/miniforge/blob/main/docs/quickstart.md"><strong>https://github.com/miniforge-ai/miniforge/blob/main/docs/quickstart.md</strong></a></p>
+<p>If you’re evaluating it, the first question isn’t “can it generate code?”</p>
+<p>It’s:</p>
+<p><strong>Can it deliver a change through the rules of a real system without needing babysitting?</strong></p>
+<h2><strong>Closing</strong></h2>
+<p>AI will absolutely increase the raw throughput of software production.</p>
+<p>But throughput isn’t the constraint in any real business I’ve worked in.</p>
+<p><strong>Governance is.</strong></p>
+<p>Miniforge exists to make governed delivery industrial:</p>
+<p>fast, legible, reviewable, controllable—on real repositories—without humans having to route around controls to keep up.</p>
+<p>If you want to follow the OSS launch and the technical deep dives as they land, keep an eye here:</p>
+<p><strong>-</strong> <a href="http://miniforge.ai"><strong>miniforge.ai</strong></a> <strong>(updates, docs, write-ups)</strong></p>
+<p><strong>-</strong> <a href="https://github.com/miniforge-ai/miniforge"><strong>https://github.com/miniforge-ai/miniforge</strong></a></p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Industrializing Software: AI as the catalyst for a fourth industrial revolution.</title>
+      <link>https://miniforge.ai/blog/industrializing-software-ai-fourth-industrial-revolution</link>
+      <guid isPermaLink="true">https://miniforge.ai/blog/industrializing-software-ai-fourth-industrial-revolution</guid>
+      <pubDate>Wed, 19 Nov 2025 12:00:00 GMT</pubDate>
+      <description>Software development is shifting from artisanal craft to industrial process. The value moves from writing code to designing the machines that produce it.</description>
+      <content:encoded><![CDATA[<h2>Industrializing Software <em>AI as the catalyst for a fourth industrial revolution.</em></h2>
+<p>I&#39;m beginning to see AI as just another industrializing force. This time, in the software industry. A new machine that will quickly drive a fast moving transformation from a craftsmen led, gilded age of skill and artistry in the software industry .. into an industrialized era where software is just the output of a machine. Give a set of inputs into a machine and out will come customized software. The skills will then go into the machine creation .. maintenance of the machines, and the ability to operate one to get the desired outputs. Hand development will become the quaint artistic hobby taken up by retired machinists, like blacksmithing or woodworking is for software developers and a few professional artisans.</p>
+<p>Most of us with an understanding of the software construction built from working with manual tools (coding) will have little value to the designers of the machinery (AI). Their machine outputs simply need to mimic what we currently do by hand .. not replicate it. If software has a similar manufacturing process to industrial goods -- becoming an industrial good -- then the system will be an industrial one. Codes, regulations, quality control engineers, architects. Engineers designing the machines, and vast numbers of machine operators churning out bespoke software made to a purpose.</p>
+<p>Thinking back on that, I would love to have the conceit that maybe I should find my architect and test architect hats again .. I know they are in here somewhere. However what I should really be doing is designing and building the machine that handles those processes for other machines and their outputs. I paid a lot of time to train an AI to be highly skilled in those disciplines, I might as well use it in the new world.</p>
+<p>So... yes, I have a plan. It might even work. I could even sell you that plan, or 10% of a plan (discounts apply :)). However the pertinent question really is:</p>
+<p>What will you be doing when you can&#39;t do this anymore?</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Hand built code is going away, and sooner than any of us who love that art are ready for.</title>
+      <link>https://miniforge.ai/blog/hand-built-code-is-going-away</link>
+      <guid isPermaLink="true">https://miniforge.ai/blog/hand-built-code-is-going-away</guid>
+      <pubDate>Mon, 20 Oct 2025 12:00:00 GMT</pubDate>
+      <description>AI displacement of manual software development follows the same industrial pattern as every prior automation wave. The question isn't whether it happens — it's what you do before it does.</description>
+      <content:encoded><![CDATA[<p>Someone posted this as a concept to consider to a chat I am a part of, and the overall theme is one that is rampant in our industry currently.</p>
+<p><a href="https://lnkd.in/gA-WRhRg">https://lnkd.in/gA-WRhRg</a></p>
+<p>Reading this article, I think it is very hand wavy. However, I think it&#39;s an interesting path we are on. The current &quot;AI will replace X&quot; pathos is being adopted by people who for the most part do not have the skills being considered. Your average exec in the average corporation likely never had those skills. Execs who did, say in an engineering company, might have worked on engineering projects a decade or two ago if ever. Still, the point of view is similar .. they have always looked at product teams (be they software, hardware, legal, etc) as they look at AI -- as a tool for an outcome. That is why they are equivalent.</p>
+<p>Today, it feels wrong because it ignores what you actually need to do in order to make the current level of AI tooling actually work. That, however, will change at some point.</p>
+<p>Those same people run these industries and choose the hiring budgets. They will make it happen. What currently looks like a cargo cult of ill informed founders and execs will continue until the capabilities actually do catch up to expectation. A less cynical take might be &quot;fake it till you make it&quot;, if it were not costing you your ability to support your family.</p>
+<p>The transformation will feel instant once we have AI tools that do not need you to have design expertise, know best practices .. or have an ounce of capability to do the actual work and actually do work well enough. The users of those will be users of industrial tools who don&#39;t need to know how they work because they just work. History suggests the majority of knowledge industries will fire their craftsmen and hire people to operate automated equipment. I hope the end of that tunnel for software looks a lot more like artists shaping intent than automated factory workers .. but that will take agency to make happen. Far more likely is industrialization.</p>
+<p>Then the industry will move on, current workers will be dumped on unemployment and told to retrain. And then forgotten. Like carriage makers, craft guilds, coal miners, auto workers, steel workers, etc. We have a long history of this. Transformation is rough on the &quot;resources&quot; being transformed out of a career.</p>
+<p>Many of us are still bargaining with these changes, complaining about AI&#39;s limitations, explaining how you can&#39;t replace an engineer, etc. Let it go, it will not help.</p>
+<p>What&#39;s next?</p>
+<p>.. because it probably won&#39;t be this.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Complexity and the limits of organizational growth</title>
+      <link>https://miniforge.ai/blog/complexity-and-the-limits-of-organizational-growth</link>
+      <guid isPermaLink="true">https://miniforge.ai/blog/complexity-and-the-limits-of-organizational-growth</guid>
+      <pubDate>Fri, 10 Oct 2025 12:00:00 GMT</pubDate>
+      <description>Organizational complexity accumulates like entropy — eventually consuming all capacity for innovation. Headcount cuts can't reverse it because the complexity is structural, not personal.</description>
+      <content:encoded><![CDATA[<p>I had a discussion that prompted some thinking on my experiences in refactoring how various companies ship software and how the complexity of communication structures impacted that work. In particular, there are three “laws” that come into play when thinking through architecture, org makeup, and how you ship software. There may be others, but these are the ones that usually come to mind:</p>
+<p><a href="https://en.wikipedia.org/wiki/John_Gall_(author)#Gall's_law"><strong>Gall&#39;s Law</strong></a> - states that attempts to build a complex system in one go will likely fail. &quot;A complex system designed from scratch never works and cannot be patched up to make it work&quot;</p>
+<p><a href="https://en.wikipedia.org/wiki/Conway%27s_law"><strong>Conway’s law</strong></a> - states &quot;[O]rganizations which design systems (in the broad sense used here) are constrained to produce designs which are copies of the communication structures of these organizations.&quot;
+<a href="https://en.wikipedia.org/wiki/Brooks%27s_law"><strong>Brooks’ Law</strong></a> - states the truism that &quot;Adding manpower to a late software project makes it later&quot;</p>
+<p>This lead to my first insight. A maxim, if you will, as a consequence of the above.</p>
+<p><strong><em>The Complexity Maxim</em>:</strong>
+Any complex organization is doomed to create only complex systems (<em>Conway</em>). Which, by definition (<em>Gall</em>) will fail. Ergo, complex organizations can only successfully maintain or extend existing complexity. Anything else a complex org attempts to do will result in failure.</p>
+<p>Which led me to a second, more generalized set of thinking. The application of the <a href="https://en.wikipedia.org/wiki/Second_law_of_thermodynamics">2nd Law of Thermodynamics</a> to organizations.</p>
+<p><strong>The Entropy Law of Organizations:</strong>
+An organization suffers entropy through gained complexity as it grows until that complexity consumes all available energy.</p>
+<p>In other words, as an organization grows the internal complexity of its structures, communication, and operations inevitably increase until the cost of sustaining that complexity consumes all available capacity for growth. Beyond which the organization collapses. If an org were a star, it would have exhausted its nuclear fuel and begun a stellar collapse.</p>
+<p>Even firing half the company will not work since the complexity is inherent in the company as an organism .. not the people. That likely just results in the org failing faster instead as it now produces less energy than required to maintain its state.</p>
+<p>This also leads directly to the <a href="https://en.wikipedia.org/wiki/The_Innovator%27s_Dilemma"><em>Innovators dilemma</em></a> for such orgs as one means of organizational collapse. Market leaders in these famous examples are inevitably nearing maximum entropy when they needed to be able to respond to innovations, even their own.</p>
+<h2>Consequence</h2>
+<p>One consequence, mentioned above, is that a firm begins a collapse and eventually dies. That can look like the path in the innovators dilemma, a stellar collapse. The firm continually moves upmarket until at some point they reach a hard limit and can no longer do so. Entropy through sheer complexity is at the core of why a company has such a hard time shifting focus and even seeing the existential crisis coming. They literally don’t have the energy available in one place to take advantage of these new opportunities or make different decisions.</p>
+<p>That can also look like brands who hollow out their own production, outsourcing to the lowest bidders (many times the same one), until the brand itself is just a marketing department attached to someone else’s business. The tool and PC industries have done this a thousand times over. That hollow shell will then have the value extracted (quickly) from the prior goodwill and get sold to it’s OEM once the shell has no more value.</p>
+<p>There is at least one stable state in the process as well. Even post “stellar collapse”. You can become a financial firm. I have seen more than a few conglomerates and giant corporations become nothing more than a financial firm with a vestigial product division(s). GE followed this path.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>AI will slow you down — until it doesn't</title>
+      <link>https://miniforge.ai/blog/ai-will-slow-you-down-until-it-doesnt</link>
+      <guid isPermaLink="true">https://miniforge.ai/blog/ai-will-slow-you-down-until-it-doesnt</guid>
+      <pubDate>Mon, 08 Sep 2025 12:00:00 GMT</pubDate>
+      <description>AI accelerates developers in unfamiliar codebases but taxes productivity where deep expertise already exists. The real question is where specialization still creates business value.</description>
+      <content:encoded><![CDATA[<h2><em>.., until it doesn’t.</em></h2>
+<p>This <a href="https://lnkd.in/gMPTEPZq">study</a> echos my own experiences. AI in new codebases, languages or contexts helps accelerate the productivity curve. In familiar, especially in familiar and large codebases, it is a significant tax. I won’t say “useless”, but nigh useless if you can already visualize the codebase and know what you are doing.</p>
+<p>I think a good question to start asking then, is how much business value is the expertise you wish to have, as a humon. Then, if you want to be actually good (vs “senior”), scoping your career to places that actually need that.</p>
+<p>Otherwise I would probably land on the business value of specialization being marginal outside of the <em>one</em> thing that business has value around. For non software firms, that likely means zero need for good devs. Their business, be it real estate, retail, travel, renting cars or houses, etc. doesn’t need the software expertise. It needs experts in its core business.</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

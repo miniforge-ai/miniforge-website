@@ -57,6 +57,7 @@ const footer = `<footer class="site-footer">
       <a href="/architectures">Architectures</a>
       <a href="/blog/">Blog</a>
       <a href="/about">About</a>
+      <a href="/feed.xml">RSS</a>
     </nav>
   </div>
 </footer>`;
@@ -68,6 +69,7 @@ const head = (title, description) => `<!doctype html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${esc(title)}</title>
   <meta name="description" content="${esc(description)}">
+  <link rel="alternate" type="application/rss+xml" title="miniforge.ai blog" href="https://miniforge.ai/feed.xml">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -150,4 +152,38 @@ ${footer}
 </html>
 `;
 writeFileSync(join(outDir, 'index.html'), index);
-console.log(`built ${posts.length} posts + index`);
+
+// RSS 2.0 feed at /feed.xml. Absolute URLs throughout so items read
+// correctly in feed readers and RSS-to-email services.
+const SITE = 'https://miniforge.ai';
+const absolutize = (html) => html.replace(/(href|src)="\//g, `$1="${SITE}/`);
+const rfc822 = (d) => new Date(`${d}T12:00:00Z`).toUTCString();
+
+const items = posts
+  .map(
+    (p) => `    <item>
+      <title>${esc(p.title)}</title>
+      <link>${SITE}/blog/${p.slug}</link>
+      <guid isPermaLink="true">${SITE}/blog/${p.slug}</guid>
+      <pubDate>${rfc822(p.date)}</pubDate>
+      <description>${esc(p.description)}</description>
+      <content:encoded><![CDATA[${absolutize(p.html)}]]></content:encoded>
+    </item>`
+  )
+  .join('\n');
+
+const feed = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>miniforge.ai — Industrializing software</title>
+    <link>${SITE}/blog/</link>
+    <atom:link href="${SITE}/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Writing on the shift from craft to industrial process — governance, autonomous delivery, and the machines that make the machines.</description>
+    <language>en</language>
+    <lastBuildDate>${rfc822(posts[0].date)}</lastBuildDate>
+${items}
+  </channel>
+</rss>
+`;
+writeFileSync(join(root, 'feed.xml'), feed);
+console.log(`built ${posts.length} posts + index + feed.xml`);

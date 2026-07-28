@@ -46,6 +46,12 @@ wrangler.toml            — Cloudflare Workers Static Assets config
    node scripts/build-posts.mjs
    ```
 
+   The script also regenerates `feed.xml` (RSS 2.0, full content,
+   absolute URLs) at the site root. Publishing a post updates the
+   feed; an RSS-to-email service (e.g. Buttondown) pointed at
+   `https://miniforge.ai/feed.xml` turns posts into a newsletter
+   with no extra steps.
+
 2. Architecture diagrams in `assets/diagrams/` are copies of
    `miniforge-ai/miniforge` → `docs/architecture/diagrams/*.svg`.
    When the source diagrams change, re-copy them. Each portfolio

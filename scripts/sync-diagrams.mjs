@@ -31,7 +31,9 @@ const STORY_DEST = {
 
 const sources = [
   { repo: join(ws, 'miniforge'), src: 'docs/architecture/diagrams', ext: '.svg', dest: join(root, 'assets', 'diagrams') },
+  { repo: join(ws, 'thesium-career'), src: 'docs/architecture/diagrams', ext: '.svg', dest: join(root, 'assets', 'diagrams', 'thesium') },
   { repo: join(ws, 'miniforge'), src: 'docs/architecture/explainers', ext: '.html', dest: join(root, 'architectures'), rename: STORY_DEST },
+  { repo: join(ws, 'thesium-career'), src: 'docs/architecture/explainers', ext: '.html', dest: join(root, 'architectures'), rename: STORY_DEST },
 ];
 
 const git = (repo, args, opts = {}) =>

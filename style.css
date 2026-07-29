@@ -352,6 +352,84 @@ h3 { font-size: 1.25rem; font-weight: 500; }
 }
 .diagram img { display: block; min-width: 640px; width: 100%; }
 
+/* ---------- diagram slide viewer ---------- */
+
+.viewer { margin-bottom: 1.5rem; }
+
+.viewer-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+.viewer-tabs .vt {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid #c9c9c7;
+  background: #fff;
+  color: var(--gauge-ink);
+  cursor: pointer;
+}
+.viewer-tabs .vt[aria-selected="true"] {
+  border-color: var(--forge);
+  color: var(--forge);
+  background: #fff;
+}
+.viewer-tabs .vt.vt-util { margin-left: auto; }
+
+/* Without JS every figure stacks (default). With JS the viewer gets
+   .enhanced and figures become slides shown one at a time. */
+.viewer.enhanced .diagram { display: none; margin-bottom: 0; }
+.viewer.enhanced .diagram.current { display: block; }
+
+.viewer-stage:fullscreen {
+  background: #fff;
+  overflow: auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.viewer-stage:fullscreen .diagram.current { border: 0; }
+.viewer-stage:fullscreen .diagram.current img { min-width: 0; width: 100%; max-height: calc(100vh - 8rem); object-fit: contain; }
+
+.viewer-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.75rem;
+}
+.viewer-nav .count {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--gauge-ink);
+  letter-spacing: 0.08em;
+}
+.viewer-nav .spacer { flex: 1; }
+.viewer-nav .hint {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--gauge-ink);
+  letter-spacing: 0.06em;
+}
+@media (max-width: 860px) { .viewer-nav .hint { display: none; } }
+
+.vbtn {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--forge);
+  background: transparent;
+  color: var(--forge);
+  cursor: pointer;
+}
+.vbtn:hover { background: var(--forge); color: #fff; }
+
 /* ---------- title-block footer ---------- */
 
 .site-footer {

@@ -47,37 +47,53 @@
     <div class="frame">
       <p>Two suites, one palette and legend. Solid strokes mean the thing exists and works; dashed means partial or scaffold; dotted means spec-only. The point of drawing both architectures side by side is the delta — the last panel carries it explicitly, along with the known contradictions the design reviews have on record.</p>
 
-      <h2>As-built — what the code does today</h2>
-      <p>Miniforge is a Clojure Polylith workspace: bases, component subsystems and deployable projects, consumed by sibling products. The core loop drives spec in, PR out: a work-spec kanban feeds a workflow FSM, a DAG orchestrator schedules phases, phase interceptors run agents against LLM backends, and gates collect evidence on the way to release.</p>
+      <h2>The six panels</h2>
+      <p>As-built (A1–A3): Miniforge is a Clojure Polylith workspace — bases, component subsystems and deployable projects. The core loop drives spec in, PR out: a work-spec kanban feeds a workflow FSM, a DAG orchestrator schedules phases, phase interceptors run agents against LLM backends, and gates collect evidence on the way to release. Target (T1–T3): five planes — factory engine, operator console, Fleet, Data Foundry, evaluation seam — with the run hierarchy, the loop structure, and the built-vs-unbuilt delta.</p>
 
-      <figure class="diagram">
-        <img src="/assets/diagrams/a1-estate.svg" alt="A1 — The Polylith estate: bases, component subsystems, deployable projects and consumers." loading="lazy">
-        <figcaption>A1 — The Polylith estate</figcaption>
-      </figure>
-      <figure class="diagram">
-        <img src="/assets/diagrams/a2-core-loop.svg" alt="A2 — The core loop: spec in, PR out, from work-spec kanban through workflow FSM, DAG orchestrator, agents and gates to release." loading="lazy">
-        <figcaption>A2 — The core loop: spec in, PR out</figcaption>
-      </figure>
-      <figure class="diagram">
-        <img src="/assets/diagrams/a3-data-integrations.svg" alt="A3 — Persistence and integrations: local state, golden fixtures, event-stream archive, LLM backends, git, OCI runtimes, MCP surfaces and ETL connectors." loading="lazy">
-        <figcaption>A3 — Persistence &amp; integrations</figcaption>
-      </figure>
+      <div class="viewer" id="dwg-viewer">
+        <div class="viewer-tabs" role="tablist" aria-label="Drawing panels"></div>
+        <div class="viewer-stage">
+          <figure class="diagram" data-code="A1">
+            <img src="/assets/diagrams/a1-estate.svg" alt="A1 — The Polylith estate: bases, component subsystems, deployable projects and consumers." loading="lazy">
+            <figcaption>A1 — The Polylith estate</figcaption>
+          </figure>
+          <figure class="diagram" data-code="A2">
+            <img src="/assets/diagrams/a2-core-loop.svg" alt="A2 — The core loop: spec in, PR out, from work-spec kanban through workflow FSM, DAG orchestrator, agents and gates to release." loading="lazy">
+            <figcaption>A2 — The core loop: spec in, PR out</figcaption>
+          </figure>
+          <figure class="diagram" data-code="A3">
+            <img src="/assets/diagrams/a3-data-integrations.svg" alt="A3 — Persistence and integrations: local state, golden fixtures, event-stream archive, LLM backends, git, OCI runtimes, MCP surfaces and ETL connectors." loading="lazy">
+            <figcaption>A3 — Persistence &amp; integrations</figcaption>
+          </figure>
+          <figure class="diagram" data-code="T1">
+            <img src="/assets/diagrams/t1-five-planes.svg" alt="T1 — Five planes and deployment shapes: factory engine, operator console, Fleet, Data Foundry and the eval seam." loading="lazy">
+            <figcaption>T1 — Five planes &amp; deployment shapes</figcaption>
+          </figure>
+          <figure class="diagram" data-code="T2">
+            <img src="/assets/diagrams/t2-runs-loops.svg" alt="T2 — Run hierarchy, loops and governance: spec to run to workflow DAG to task nodes; inner, outer and meta loops; policy packs to gates to evidence." loading="lazy">
+            <figcaption>T2 — Run hierarchy, loops, governance</figcaption>
+          </figure>
+          <figure class="diagram" data-code="T3">
+            <img src="/assets/diagrams/t3-delta.svg" alt="T3 — Built-versus-unbuilt delta and contradiction register: spec-by-spec completion, subsystem status board, and recorded contradictions." loading="lazy">
+            <figcaption>T3 — Built-vs-unbuilt delta &amp; contradiction register</figcaption>
+          </figure>
+        </div>
+        <div class="viewer-nav">
+          <button class="vbtn" data-act="prev" aria-label="Previous panel">← Prev</button>
+          <span class="count"></span>
+          <button class="vbtn" data-act="next" aria-label="Next panel">Next →</button>
+          <span class="spacer"></span>
+          <span class="hint">← → NAVIGATE · F FULLSCREEN</span>
+          <button class="vbtn" data-act="fs">⛶ Fullscreen</button>
+        </div>
+      </div>
 
-      <h2>Target — what the specs design</h2>
-      <p>The target architecture separates five planes — the OSS factory engine, an operator console, Fleet coordination and governance, Data Foundry, and the evaluation seam — across deployment shapes from a single workstation to on-prem Kubernetes. Runs form a hierarchy (spec → run → workflow DAG → task nodes and agent sessions) governed by inner, outer and meta loops, with policy packs compiled into gates and evidence.</p>
-
-      <figure class="diagram">
-        <img src="/assets/diagrams/t1-five-planes.svg" alt="T1 — Five planes and deployment shapes: factory engine, operator console, Fleet, Data Foundry and the eval seam." loading="lazy">
-        <figcaption>T1 — Five planes &amp; deployment shapes</figcaption>
-      </figure>
-      <figure class="diagram">
-        <img src="/assets/diagrams/t2-runs-loops.svg" alt="T2 — Run hierarchy, loops and governance: spec to run to workflow DAG to task nodes; inner, outer and meta loops; policy packs to gates to evidence." loading="lazy">
-        <figcaption>T2 — Run hierarchy, loops, governance</figcaption>
-      </figure>
-      <figure class="diagram">
-        <img src="/assets/diagrams/t3-delta.svg" alt="T3 — Built-versus-unbuilt delta and contradiction register: spec-by-spec completion, subsystem status board, and recorded contradictions." loading="lazy">
-        <figcaption>T3 — Built-vs-unbuilt delta &amp; contradiction register</figcaption>
-      </figure>
+      <h2>The stories, for humans</h2>
+      <p>Two companion pieces explain the same machinery without the jargon — the way you would tell a nine-year-old:</p>
+      <ol>
+        <li><a href="/architectures/eli9-the-fort-building-robots">The Fort-Building Robots</a> — the main architecture: the garage board, the wiggle test, the two notebooks, the porch.</li>
+        <li><a href="/architectures/eli9-robot-helpers-sticker-rules">The Robot Helpers and the Sticker Rules</a> — agent policy and routing: request slips, stickers, the no-ears doorkeeper, and picking which helper gets the job.</li>
+      </ol>
 
       <h2>Why keep the delta on record</h2>
       <p>Most architecture documents describe an idealized system that the code quietly stopped resembling. These are maintained as a pair on purpose: the as-built suite is corrected against source, the target suite cites its specs, and the delta panel records what is unbuilt and where the design reviews found contradictions. When the factory changes itself, the drawings change with it — through the same pipeline as any other change.</p>
@@ -107,6 +123,56 @@
     </nav>
   </div>
 </footer>
+
+<script>
+(function () {
+  var viewer = document.getElementById('dwg-viewer');
+  if (!viewer || !document.fullscreenEnabled && !document.documentElement.requestFullscreen) { /* still enhance without fullscreen */ }
+  var stage = viewer.querySelector('.viewer-stage');
+  var slides = Array.prototype.slice.call(viewer.querySelectorAll('.diagram'));
+  var tabbar = viewer.querySelector('.viewer-tabs');
+  var count = viewer.querySelector('.count');
+  var idx = 0;
+
+  var tabs = slides.map(function (s, i) {
+    var b = document.createElement('button');
+    b.className = 'vt';
+    b.setAttribute('role', 'tab');
+    b.textContent = s.dataset.code;
+    b.title = s.querySelector('figcaption').textContent;
+    b.addEventListener('click', function () { show(i); });
+    tabbar.appendChild(b);
+    return b;
+  });
+
+  function show(i) {
+    idx = (i + slides.length) % slides.length;
+    slides.forEach(function (s, j) { s.classList.toggle('current', j === idx); });
+    tabs.forEach(function (t, j) { t.setAttribute('aria-selected', j === idx ? 'true' : 'false'); });
+    count.textContent = slides[idx].dataset.code + ' · ' + (idx + 1) + ' / ' + slides.length;
+  }
+
+  viewer.querySelector('[data-act="prev"]').addEventListener('click', function () { show(idx - 1); });
+  viewer.querySelector('[data-act="next"]').addEventListener('click', function () { show(idx + 1); });
+  viewer.querySelector('[data-act="fs"]').addEventListener('click', function () {
+    if (document.fullscreenElement) { document.exitFullscreen(); }
+    else if (stage.requestFullscreen) { stage.requestFullscreen(); }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'ArrowLeft') { show(idx - 1); }
+    else if (e.key === 'ArrowRight') { show(idx + 1); }
+    else if (e.key === 'f' || e.key === 'F') {
+      if (document.fullscreenElement) { document.exitFullscreen(); }
+      else if (stage.requestFullscreen) { stage.requestFullscreen(); }
+    }
+  });
+
+  viewer.classList.add('enhanced');
+  show(0);
+})();
+</script>
 
 </body>
 </html>

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Miniforge architecture, simplified — miniforge.ai</title>
+  <meta name="description" content="The Miniforge architecture told as three plain-language stories — one shared world of robots, doorkeepers, stickers and passes — so a human can actually grok it.">
+  <link rel="canonical" href="https://miniforge.ai/architectures/miniforge-simplified">
+  <link rel="alternate" type="application/rss+xml" title="miniforge.ai blog" href="https://miniforge.ai/feed.xml">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="frame">
+    <a class="brand" href="/">
+      <svg class="mark" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="#ff5e1a" d="M12 1.5 13.2 4 16 4.6 13.9 6.4 14.4 9.2 12 7.8 9.6 9.2 10.1 6.4 8 4.6 10.8 4Z"/>
+        <path fill="#dad9d9" d="M2.5 11h12.5c2.8 0 5.2 1 6.5 2.6-1.8.6-3.9.9-6 .9h-2v2.2c0 1.2.8 2.2 2 2.7v1.6H8v-1.6c1.2-.5 2-1.5 2-2.7v-2.2H7L5 13H2.5Z"/>
+      </svg>
+      <span>miniforge<span class="tld">.ai</span></span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="/miniforge">Miniforge</a>
+      <a href="/products">Products</a>
+      <a href="/architectures" aria-current="page">Architectures</a>
+      <a href="/blog/">Blog</a>
+      <a href="/about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="frame">
+      <span class="plate-label">MINIFORGE <b>//</b> SIMPLIFIED</span>
+      <h1>The same machine, told as <span class="hot">a story</span>.</h1>
+      <p class="lede">Miniforge's architecture is dense — a workflow FSM, a DAG orchestrator, policy gates, evidence bundles. These three stories tell the whole thing in one shared world of robots, doorkeepers, stickers and passes, so a human can actually grok it. Each ends with a grown-up translation table mapping every story element to the real component.</p>
+    </div>
+  </section>
+
+  <section class="section seamed">
+    <div class="frame">
+      <div class="section-head">
+        <span class="plate-label">READING ORDER</span>
+        <h2>Three stories, one world.</h2>
+        <p>Read in order — later stories reuse the earlier ones' characters. Together they are the simplicity invariant: if a change to the architecture cannot be told in the story, the change is suspect.</p>
+      </div>
+      <ul class="spec-list">
+        <li>
+          <span class="idx">01</span>
+          <span class="name"><a href="/architectures/eli9-the-fort-building-robots" style="color:inherit">The Fort-Building Robots</a></span>
+          <span class="desc">The factory itself: the garage board (work kanban), the coach (orchestrator), the wiggle test (gates), the two notebooks (evidence + event stream), the porch (operator console).</span>
+        </li>
+        <li>
+          <span class="idx">02</span>
+          <span class="name"><a href="/architectures/eli9-robot-helpers-sticker-rules" style="color:inherit">The Robot Helpers and the Sticker Rules</a></span>
+          <span class="desc">Policy and routing: gullible robots write request slips, a doorkeeper with no ears decides, stickers ride every paper, and helpers get crossed off before the contest starts.</span>
+        </li>
+        <li>
+          <span class="idx">03</span>
+          <span class="name"><a href="/architectures/eli9-your-house-their-clubhouse" style="color:inherit">Your House, Their Clubhouse, and the Passes</a></span>
+          <span class="desc">Tenancy, ownership and rights: every thing lives in exactly one house, joining prints passes instead of moving houses, and no switch ever bolts your own door.</span>
+        </li>
+      </ul>
+      <div class="btn-row" style="margin-top:2rem">
+        <a class="btn" href="/architectures/eli9-the-fort-building-robots">Start reading →</a>
+        <a class="btn ghost" href="/architectures/miniforge">The full drawings →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="frame">
+    <div class="title-block">
+      <div class="tb-cell"><span class="k">Project</span><span class="v">miniforge.ai — industrial software factory</span></div>
+      <div class="tb-cell"><span class="k">Rev</span><span class="v">2026.07</span></div>
+      <div class="tb-cell"><span class="k">License</span><span class="v">Apache-2.0</span></div>
+      <div class="tb-cell"><span class="k">Source</span><span class="v"><a href="https://github.com/miniforge-ai/miniforge">github</a></span></div>
+      <div class="tb-cell"><span class="k">Contact</span><span class="v"><a href="mailto:christopher@miniforge.ai">email</a></span></div>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="/miniforge">Miniforge</a>
+      <a href="/products">Products</a>
+      <a href="/architectures">Architectures</a>
+      <a href="/blog/">Blog</a>
+      <a href="/about">About</a>
+      <a href="/feed.xml">RSS</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

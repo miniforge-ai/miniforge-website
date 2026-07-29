@@ -52,16 +52,21 @@ wrangler.toml            — Cloudflare Workers Static Assets config
    `https://miniforge.ai/feed.xml` turns posts into a newsletter
    with no extra steps.
 
-2. Architecture diagrams are CANONICAL in their source repos and
-   only projected here:
+2. Architecture diagrams AND the ELI9 story pages are CANONICAL in
+   their source repos and only projected here:
    `miniforge-ai/miniforge` → `docs/architecture/diagrams/*.svg`
    lands in `assets/diagrams/`; `miniforge-ai/thesium-career`
-   (the Ariadne panels) lands in `assets/diagrams/thesium/`.
-   After a diagram PR merges upstream, run
+   (the Ariadne panels) lands in `assets/diagrams/thesium/`;
+   `docs/architecture/explainers/*.html` in either repo lands in
+   `architectures/` (URL mapping in `scripts/sync-diagrams.mjs`).
+   Sync is automated: each source repo's `notify-website.yml` fires
+   a `repository_dispatch` here on merge, and
+   `.github/workflows/sync-content.yml` (also daily cron + manual)
+   pulls, commits and pushes — Cloudflare redeploys. Manual run:
    `node scripts/sync-diagrams.mjs` (reads each repo's origin/main —
-   local checkout state is irrelevant) and commit the diff. Never
-   edit an SVG here. Each portfolio entry page links back to its
-   source directory on GitHub.
+   local checkout state is irrelevant), commit the diff. Never edit
+   a synced SVG or story HTML here. Each portfolio entry page links
+   back to its source directory on GitHub.
 
 ## Deploy via Cloudflare Workers Builds
 

@@ -62,13 +62,14 @@ const footer = `<footer class="site-footer">
   </div>
 </footer>`;
 
-const head = (title, description) => `<!doctype html>
+const head = (title, description, canonical) => `<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${esc(title)}</title>
   <meta name="description" content="${esc(description)}">
+  <link rel="canonical" href="${canonical}">
   <link rel="alternate" type="application/rss+xml" title="miniforge.ai blog" href="https://miniforge.ai/feed.xml">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -87,7 +88,7 @@ const posts = readdirSync(postsDir)
   .sort((a, b) => b.date.localeCompare(a.date));
 
 for (const p of posts) {
-  const page = `${head(`${p.title} — miniforge.ai`, p.description)}
+  const page = `${head(`${p.title} — miniforge.ai`, p.description, `https://miniforge.ai/blog/${p.slug}`)}
 
 ${header}
 
@@ -125,7 +126,7 @@ const rows = posts
   )
   .join('\n');
 
-const index = `${head('Blog — miniforge.ai', 'Writing on industrializing software: governance, autonomous delivery, and the factory that builds the factory.')}
+const index = `${head('Blog — miniforge.ai', 'Writing on industrializing software: governance, autonomous delivery, and the factory that builds the factory.', 'https://miniforge.ai/blog/')}
 
 ${header}
 

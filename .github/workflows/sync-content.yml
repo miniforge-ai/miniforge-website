@@ -1,16 +1,14 @@
 # Pulls canonical architecture content (diagrams + ELI9 stories) from
-# the source repos into this site and commits the diff to main —
-# Cloudflare Workers Builds then redeploys automatically.
+# miniforge-ai/miniforge into this site and commits the diff to main —
+# Cloudflare Workers Builds then redeploys automatically. This repo
+# projects miniforge only; thesium content lives on thesium-marketing.
 #
 # Triggers:
 #   - repository_dispatch [architecture-updated]: sent by the source
-#     repos' notify-website.yml when docs/architecture/** changes land
-#     on their main.
+#     repo's notify-website.yml when docs/architecture/** changes land
+#     on its main.
 #   - schedule: daily backstop in case a dispatch is missed.
 #   - workflow_dispatch: manual run.
-#
-# Reading the private thesium-career repo uses a Miniforge CI bot app
-# token (app id is public; key is the org secret MINIFORGE_CI_BOT_KEY).
 
 name: Sync content
 
@@ -28,9 +26,6 @@ concurrency:
   group: sync-content
   cancel-in-progress: false
 
-env:
-  MINIFORGE_CI_BOT_APP_ID: "3360143"
-
 jobs:
   sync:
     name: Sync diagrams and stories
@@ -39,28 +34,11 @@ jobs:
       - name: Checkout website
         uses: actions/checkout@v4
 
-      - name: Generate source-repo read token
-        id: app-token
-        uses: actions/create-github-app-token@v1
-        with:
-          app-id: ${{ env.MINIFORGE_CI_BOT_APP_ID }}
-          private-key: ${{ secrets.MINIFORGE_CI_BOT_KEY }}
-          owner: miniforge-ai
-          repositories: miniforge,thesium-career
-
       - name: Checkout miniforge
         uses: actions/checkout@v4
         with:
           repository: miniforge-ai/miniforge
-          token: ${{ steps.app-token.outputs.token }}
           path: sources/miniforge
-
-      - name: Checkout thesium-career
-        uses: actions/checkout@v4
-        with:
-          repository: miniforge-ai/thesium-career
-          token: ${{ steps.app-token.outputs.token }}
-          path: sources/thesium-career
 
       - name: Sync content
         env:
@@ -83,5 +61,5 @@ jobs:
           git config user.email "noreply@miniforge.ai"
           DETAIL="$TRIGGER_EVENT"
           if [ -n "$PAYLOAD_SOURCE" ]; then DETAIL="$DETAIL ($PAYLOAD_SOURCE@$PAYLOAD_SHA)"; fi
-          git commit -m "chore: sync architecture content from source repos" -m "Triggered by: $DETAIL"
+          git commit -m "chore: sync architecture content from miniforge" -m "Triggered by: $DETAIL"
           git push

@@ -47,7 +47,19 @@ for (const { repo, src, ext, dest, rename } of sources) {
   if (files.length === 0) { console.log(`${basename(repo)}: nothing under ${src}`); continue; }
   mkdirSync(dest, { recursive: true });
   for (const f of files) {
-    const content = git(repo, ['show', `origin/main:${f}`]);
+    let content = git(repo, ['show', `origin/main:${f}`]);
+    // Site chrome concern, injected at projection time: story pages
+    // already style :root[data-theme], so the site's saved theme
+    // choice must be applied before first paint here too.
+    if (ext === '.html' && !content.includes("localStorage.getItem('theme')")) {
+      content = content.replace('</head>', `  <script>
+    (function () {
+      var t = localStorage.getItem('theme');
+      if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+    })();
+  </script>
+</head>`);
+    }
     const name = rename ? (rename[basename(f)] || basename(f)) : basename(f);
     writeFileSync(join(dest, name), content);
   }

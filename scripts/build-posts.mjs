@@ -39,6 +39,7 @@ const header = `<header class="site-header">
       <a href="/blog/" aria-current="page">Blog</a>
       <a href="/about">About</a>
     </nav>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Switch color theme">Theme</button>
   </div>
 </header>`;
 
@@ -60,7 +61,26 @@ const footer = `<footer class="site-footer">
       <a href="/feed.xml">RSS</a>
     </nav>
   </div>
-</footer>`;
+</footer>
+
+<script>
+  (function () {
+    var btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    function effective() {
+      return document.documentElement.dataset.theme ||
+        (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    }
+    function label() { btn.textContent = effective() === 'light' ? 'Dark' : 'Light'; }
+    btn.addEventListener('click', function () {
+      var next = effective() === 'light' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = next;
+      localStorage.setItem('theme', next);
+      label();
+    });
+    label();
+  })();
+</script>`;
 
 const head = (title, description, canonical) => `<!doctype html>
 <html lang="en">
@@ -76,6 +96,13 @@ const head = (title, description, canonical) => `<!doctype html>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
+  <script>
+    // Pre-paint: apply the saved theme before first render to avoid flash.
+    (function () {
+      var t = localStorage.getItem('theme');
+      if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+    })();
+  </script>
 </head>
 <body>`;
 

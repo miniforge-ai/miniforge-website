@@ -4,18 +4,34 @@
    sampled from the brand banner. */
 
 :root {
+  /* Dark literals first as fallback for browsers without light-dark();
+     themed values override below. Toggle sets data-theme; without it
+     the system preference (color-scheme) decides. */
+  color-scheme: light dark;
   --forge: #ff5e1a;
   --ember: #ff8a50;
   --heat: #ffb347;
-  --ingot: #131518;      /* page background */
-  --steel: #1c2024;      /* raised panel */
-  --plate: #24292e;      /* brighter panel */
-  --seam: #2e343b;       /* borders on dark */
-  --mill: #dad9d9;       /* brand light gray */
-  --paper: #f4f4f3;      /* light reading surface */
-  --ink: #16181b;        /* text on light */
-  --gauge: #9aa2ab;      /* secondary text on dark */
-  --gauge-ink: #5c636b;  /* secondary text on light */
+  --ingot: #131518;
+  --steel: #1c2024;
+  --plate: #24292e;
+  --seam: #2e343b;
+  --mill: #dad9d9;
+  --paper: #f4f4f3;
+  --head: #ffffff;
+  --gauge: #9aa2ab;
+
+  --ember: light-dark(#d94e0f, #ff8a50);
+  --heat: light-dark(#e8930c, #ffb347);
+  --ingot: light-dark(#edebe8, #131518);   /* page background */
+  --steel: light-dark(#ffffff, #1c2024);   /* raised panel */
+  --plate: light-dark(#f2f1ef, #24292e);   /* brighter panel */
+  --seam: light-dark(#d8d6d3, #2e343b);    /* borders */
+  --mill: light-dark(#1b1d20, #dad9d9);    /* primary text on shell */
+  --paper: light-dark(#ffffff, #f4f4f3);   /* reading surface */
+  --head: light-dark(#16181b, #ffffff);    /* headings on shell */
+  --gauge: light-dark(#5d646d, #9aa2ab);   /* secondary text on shell */
+  --ink: #16181b;        /* text on light surfaces */
+  --gauge-ink: #5c636b;  /* secondary text on light surfaces */
 
   --display: "Space Grotesk", sans-serif;
   --body: "IBM Plex Sans", sans-serif;
@@ -25,6 +41,9 @@
   --gutter: clamp(1.25rem, 4vw, 3rem);
   --frame: 1180px;
 }
+
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -104,6 +123,19 @@ img, svg { max-width: 100%; height: auto; }
 }
 .site-nav a:hover { color: var(--mill); border-color: var(--seam); }
 .site-nav a[aria-current="page"] { color: var(--forge); border-color: var(--seam); }
+
+.theme-toggle {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gauge);
+  background: none;
+  border: 1px solid var(--seam);
+  padding: 0.45rem 0.7rem;
+  cursor: pointer;
+}
+.theme-toggle:hover { color: var(--forge); }
 
 /* ---------- data-plate eyebrow ---------- */
 
@@ -200,7 +232,7 @@ h3 { font-size: 1.25rem; font-weight: 500; }
   flex-direction: column;
   gap: 0.7rem;
 }
-.cell h3 { color: #fff; }
+.cell h3 { color: var(--head); }
 .cell p { color: var(--gauge); font-size: 0.95rem; }
 
 .light .grid { background: #d2d2d0; border-color: #d2d2d0; }
@@ -563,7 +595,7 @@ h3 { font-size: 1.25rem; font-weight: 500; }
   align-items: baseline;
 }
 .spec-list .idx { font-family: var(--mono); font-size: 0.78rem; color: var(--forge); }
-.spec-list .name { font-family: var(--display); font-weight: 500; color: #fff; }
+.spec-list .name { font-family: var(--display); font-weight: 500; color: var(--head); }
 .spec-list .desc { color: var(--gauge); font-size: 0.95rem; }
 
 /* ---------- responsive ---------- */

@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ariadne — tenancy, ownership and access — miniforge.ai</title>
+  <meta name="description" content="The Ariadne architecture: one ownership model that serves a single-person local install and a multi-org hosted deployment without branching. Five drawings and two plain-language stories.">
+  <link rel="canonical" href="https://miniforge.ai/architectures/thesium-ariadne">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="frame">
+    <a class="brand" href="/">
+      <svg class="mark" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="#ff5e1a" d="M12 1.5 13.2 4 16 4.6 13.9 6.4 14.4 9.2 12 7.8 9.6 9.2 10.1 6.4 8 4.6 10.8 4Z"/>
+        <path fill="#dad9d9" d="M2.5 11h12.5c2.8 0 5.2 1 6.5 2.6-1.8.6-3.9.9-6 .9h-2v2.2c0 1.2.8 2.2 2 2.7v1.6H8v-1.6c1.2-.5 2-1.5 2-2.7v-2.2H7L5 13H2.5Z"/>
+      </svg>
+      <span>miniforge<span class="tld">.ai</span></span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="/miniforge">Miniforge</a>
+      <a href="/products">Products</a>
+      <a href="/architectures" aria-current="page">Architectures</a>
+      <a href="/blog/">Blog</a>
+      <a href="/about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="article-hero">
+    <div class="frame">
+      <span class="plate-label">DWG 01–05 <b>//</b> SOURCE: <b>github.com/miniforge-ai/thesium-career</b></span>
+      <h1>Ariadne — whose data is whose.</h1>
+      <p class="meta">docs/architecture · five panels · one legend across all five</p>
+    </div>
+  </section>
+
+  <article class="article">
+    <div class="frame">
+      <p>Ariadne gave Theseus the thread that let him walk into the labyrinth and get back out. This architecture is that thread: provenance and authority traceable in both directions, and a guaranteed way out — revocation, takeaway export, leaving day. It was distilled in the Theseus engine and first implemented for Thesium, but the model is engine-agnostic on purpose and is written to be instantiated anywhere people and organizations both hold data.</p>
+
+      <h2>The problem it solves</h2>
+      <p>Most systems start with one identity: a <code>user</code> string that is simultaneously <em>who is operating</em>, <em>who the data is about</em>, and <em>how rows are keyed</em>. That conflation is invisible while every operator is also the subject of their own data, and becomes structural debt the moment an admin, a manager, a coach or a support engineer appears — or the moment offboarding has to answer "what leaves with the person and what stays with the org" with something better than a policy document.</p>
+      <p>The usual industry answer is org-centric: the workspace owns everything inside it. That fails any product whose value proposition includes <em>the person's data outlives the membership</em>, and it is unavailable entirely in bottom-up adoption, where no org entity exists yet.</p>
+
+      <h2>Three axioms</h2>
+      <ol>
+        <li><strong>People are tenants.</strong> There is no separate subject or user identity layer; the person a record is about <em>is</em> a personal tenant.</li>
+        <li><strong>Every record has exactly one owner tenant.</strong> Anything a second party may see is a granted relation, not a second owner.</li>
+        <li><strong>Membership is a relation, never containment.</strong> Joining writes one tuple; leaving deletes it. No data moves in either direction — which is why offboarding is not a data migration.</li>
+      </ol>
+
+      <h2>The five panels</h2>
+      <p>One palette and legend across all five. The drawings move outward from the static model to the request path, then to where ownership comes from, then to what happens when an agent — not a person — is the one asking, and finally to how any of it is taken back.</p>
+
+      <div class="viewer" id="dwg-viewer">
+        <div class="viewer-tabs" role="tablist" aria-label="Drawing panels"></div>
+        <div class="viewer-stage">
+          <figure class="diagram" data-code="01">
+            <img src="/assets/diagrams/thesium/01-core-model.svg" alt="01 — Core model: tenants, principals and relations; containment versus relation; the four orthogonal layers; the three axioms." loading="lazy">
+            <figcaption>01 — Core model: tenants, principals, relations</figcaption>
+          </figure>
+          <figure class="diagram" data-code="02">
+            <img src="/assets/diagrams/thesium/02-request-path.svg" alt="02 — Request path: resolvers, the invocation context, the four-gate gauntlet and the check seam." loading="lazy">
+            <figcaption>02 — Request path: the four-gate gauntlet</figcaption>
+          </figure>
+          <figure class="diagram" data-code="03">
+            <img src="/assets/diagrams/thesium/03-ownership-provenance.svg" alt="03 — Ownership by provenance: intake channels, the IP boundary, projections and shared assets." loading="lazy">
+            <figcaption>03 — Ownership by provenance</figcaption>
+          </figure>
+          <figure class="diagram" data-code="04">
+            <img src="/assets/diagrams/thesium/04-agent-tool-gates.svg" alt="04 — Agent orchestration and tool egress: delegation, the three tool gates, the disclosure lattice, elevation and scoped grants." loading="lazy">
+            <figcaption>04 — Agent orchestration &amp; tool egress</figcaption>
+          </figure>
+          <figure class="diagram" data-code="05">
+            <img src="/assets/diagrams/thesium/05-revocation-rights.svg" alt="05 — Revocation and third-party rights: one revocation mechanism across three domains, license routing and the takeaway export." loading="lazy">
+            <figcaption>05 — Revocation &amp; third-party rights</figcaption>
+          </figure>
+        </div>
+        <div class="viewer-nav">
+          <button class="vbtn" data-act="prev" aria-label="Previous panel">← Prev</button>
+          <span class="count"></span>
+          <button class="vbtn" data-act="next" aria-label="Next panel">Next →</button>
+          <span class="spacer"></span>
+          <span class="hint">← → NAVIGATE · F FULLSCREEN</span>
+          <button class="vbtn" data-act="fs">⛶ Fullscreen</button>
+        </div>
+      </div>
+
+      <h2>Two things that are commonly conflated</h2>
+      <p><strong>Disclosure is not access control.</strong> A record marked confidential says what the record permits regardless of who asks; a relation tuple says who may ask. A manager relation does not read a confidential record, and a public record inside the wrong boundary is still unreachable without a relation path. Modeling tenancy as visibility tiers on a confidentiality enum fails exactly here.</p>
+      <p><strong>Ownership is not visibility.</strong> Ownership answers which tenant controls a record's lifecycle, namespace, grants and default portability. It never encodes who may see it.</p>
+
+      <h2>The architecture, simplified</h2>
+      <p>Two stories, one shared world — the same house, the same doorkeeper, the same stickers. Together they are the simplicity invariant: if a future change to the architecture cannot be told in the story, the change is suspect.</p>
+      <ol>
+        <li><a href="/architectures/eli9-your-house-their-clubhouse">Your House, Their Clubhouse, and the Passes</a> — tenancy, ownership and rights: whose things are whose, passes instead of moved houses, and the moving-box promise.</li>
+        <li><a href="/architectures/eli9-robot-helpers-sticker-rules">The Robot Helpers and the Sticker Rules</a> — agents, clauses, the no-ears doorkeeper, and routing.</li>
+      </ol>
+
+      <h2>Where it is used</h2>
+      <p>Ariadne is the ownership model behind the <a href="https://thesium.me">Thesium</a> product line, whose products are local-first by construction — the single-person install and the multi-org hosted deployment are the same model with different tuples, not two codebases. It is written to be adopted incrementally by a system that has the one-string shape today.</p>
+
+      <p><a href="https://github.com/miniforge-ai/thesium-career/tree/main/docs/architecture">View the source architecture on GitHub →</a></p>
+    </div>
+  </article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="frame">
+    <div class="title-block">
+      <div class="tb-cell"><span class="k">Project</span><span class="v">Ariadne — tenancy, ownership, access</span></div>
+      <div class="tb-cell"><span class="k">Rev</span><span class="v">v1.5 · 2026.07</span></div>
+      <div class="tb-cell"><span class="k">Lineage</span><span class="v">Theseus engine · first built for Thesium</span></div>
+      <div class="tb-cell"><span class="k">Source</span><span class="v"><a href="https://github.com/miniforge-ai/thesium-career">github</a></span></div>
+      <div class="tb-cell"><span class="k">Contact</span><span class="v"><a href="mailto:christopher@miniforge.ai">email</a></span></div>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="/miniforge">Miniforge</a>
+      <a href="/products">Products</a>
+      <a href="/architectures">Architectures</a>
+      <a href="/blog/">Blog</a>
+      <a href="/about">About</a>
+      <a href="/feed.xml">RSS</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var viewer = document.getElementById('dwg-viewer');
+  if (!viewer) return;
+  var stage = viewer.querySelector('.viewer-stage');
+  var slides = Array.prototype.slice.call(viewer.querySelectorAll('.diagram'));
+  var tabbar = viewer.querySelector('.viewer-tabs');
+  var count = viewer.querySelector('.count');
+  var idx = 0;
+
+  var tabs = slides.map(function (s, i) {
+    var b = document.createElement('button');
+    b.className = 'vt';
+    b.setAttribute('role', 'tab');
+    b.textContent = s.dataset.code;
+    b.title = s.querySelector('figcaption').textContent;
+    b.addEventListener('click', function () { show(i); });
+    tabbar.appendChild(b);
+    return b;
+  });
+
+  function show(i) {
+    idx = (i + slides.length) % slides.length;
+    slides.forEach(function (s, j) { s.classList.toggle('current', j === idx); });
+    tabs.forEach(function (t, j) { t.setAttribute('aria-selected', j === idx ? 'true' : 'false'); });
+    count.textContent = slides[idx].dataset.code + ' · ' + (idx + 1) + ' / ' + slides.length;
+  }
+
+  viewer.querySelector('[data-act="prev"]').addEventListener('click', function () { show(idx - 1); });
+  viewer.querySelector('[data-act="next"]').addEventListener('click', function () { show(idx + 1); });
+  viewer.querySelector('[data-act="fs"]').addEventListener('click', function () {
+    if (document.fullscreenElement) { document.exitFullscreen(); }
+    else if (stage.requestFullscreen) { stage.requestFullscreen(); }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'ArrowLeft') { show(idx - 1); }
+    else if (e.key === 'ArrowRight') { show(idx + 1); }
+    else if (e.key === 'f' || e.key === 'F') {
+      if (document.fullscreenElement) { document.exitFullscreen(); }
+      else if (stage.requestFullscreen) { stage.requestFullscreen(); }
+    }
+  });
+
+  viewer.classList.add('enhanced');
+  show(0);
+})();
+</script>
+
+</body>
+</html>

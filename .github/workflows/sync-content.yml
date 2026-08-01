@@ -9,8 +9,13 @@
 #   - schedule: daily backstop in case a dispatch is missed.
 #   - workflow_dispatch: manual run.
 #
-# Reading the private thesium-career repo uses a Miniforge CI bot app
-# token (app id is public; key is the org secret MINIFORGE_CI_BOT_KEY).
+# All synced content is public: it comes from miniforge-ai/miniforge.
+# This workflow deliberately has NO read access to any private repo.
+# Ariadne used to be sourced from the private thesium-career repo; it
+# now lives in miniforge, so that grant was removed. Do not add a
+# private repo back here — this job commits what it copies straight to
+# a public repository, so the copy script's path list would be the
+# only thing preventing a private file from being published.
 
 name: Sync content
 
@@ -46,7 +51,7 @@ jobs:
           app-id: ${{ env.MINIFORGE_CI_BOT_APP_ID }}
           private-key: ${{ secrets.MINIFORGE_CI_BOT_KEY }}
           owner: miniforge-ai
-          repositories: miniforge,thesium-career
+          repositories: miniforge
 
       - name: Checkout miniforge
         uses: actions/checkout@v4
@@ -54,13 +59,6 @@ jobs:
           repository: miniforge-ai/miniforge
           token: ${{ steps.app-token.outputs.token }}
           path: sources/miniforge
-
-      - name: Checkout thesium-career
-        uses: actions/checkout@v4
-        with:
-          repository: miniforge-ai/thesium-career
-          token: ${{ steps.app-token.outputs.token }}
-          path: sources/thesium-career
 
       - name: Sync content
         env:

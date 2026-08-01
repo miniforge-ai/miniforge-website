@@ -53,24 +53,27 @@ wrangler.toml            — Cloudflare Workers Static Assets config
    with no extra steps.
 
 2. Architecture diagrams AND the ELI9 story pages are CANONICAL in
-   their source repos and only projected here:
-   `miniforge-ai/miniforge` → `docs/architecture/diagrams/*.svg`
-   lands in `assets/diagrams/`; `miniforge-ai/thesium-career`
-   (the Ariadne panels) lands in `assets/diagrams/thesium/`;
-   `docs/architecture/explainers/*.html` in either repo lands in
-   `architectures/` (URL mapping in `scripts/sync-diagrams.mjs`).
-   Sync is automated: each source repo's `notify-website.yml` fires
-   a `repository_dispatch` here on merge, and
+   `miniforge-ai/miniforge` and only projected here:
+   `docs/architecture/diagrams/*.svg` lands in `assets/diagrams/`;
+   `docs/architecture/ariadne/diagrams/*.svg` (the Ariadne panels)
+   lands in `assets/diagrams/thesium/`; `*/explainers/*.html` from
+   either tree lands in `architectures/` (URL mapping in
+   `scripts/sync-diagrams.mjs`).
+   Sync is automated: miniforge's `notify-website.yml` fires a
+   `repository_dispatch` here on merge, and
    `.github/workflows/sync-content.yml` (also daily cron + manual)
    pulls, commits and pushes — Cloudflare redeploys. Manual run:
-   `node scripts/sync-diagrams.mjs` (reads each repo's origin/main —
+   `node scripts/sync-diagrams.mjs` (reads origin/main via git —
    local checkout state is irrelevant), commit the diff. Never edit
    a synced SVG or story HTML here. Each portfolio entry page links
    back to its source directory on GitHub.
-   Interim exception: the two thesium-world story pages
-   (`eli9-robot-helpers-sticker-rules`, `eli9-your-house-their-clubhouse`)
-   are website-local until they are checked into
-   `thesium-career/docs/architecture/explainers/` as HTML.
+
+   **This workflow reads only public repositories, on purpose.** It
+   commits whatever it copies straight to this public repo, so the
+   copy script's path list would be the only thing standing between a
+   private file and publication. Do not grant it read access to a
+   private repo. Ariadne was moved into the public miniforge repo
+   (tag `ariadne/v1.6.0`) precisely so that grant could be dropped.
 
 ## Deploy via Cloudflare Workers Builds
 

@@ -2,9 +2,9 @@
 // the source repos' origin/main:
 //
 //   miniforge       docs/architecture/diagrams/*.svg    -> assets/diagrams/
-//   thesium-career  docs/architecture/diagrams/*.svg    -> assets/diagrams/thesium/
+//   miniforge       docs/architecture/ariadne/diagrams/*.svg -> assets/diagrams/thesium/
 //   miniforge       docs/architecture/explainers/*.html -> architectures/ (ELI9 stories)
-//   thesium-career  docs/architecture/explainers/*.html -> architectures/ (ELI9 stories)
+//   miniforge       docs/architecture/ariadne/explainers/*.html -> architectures/
 //
 // The repos are the single source of truth; this script is the only
 // way diagrams and stories enter the website (same convention as
@@ -31,9 +31,9 @@ const STORY_DEST = {
 
 const sources = [
   { repo: join(ws, 'miniforge'), src: 'docs/architecture/diagrams', ext: '.svg', dest: join(root, 'assets', 'diagrams') },
-  { repo: join(ws, 'thesium-career'), src: 'docs/architecture/diagrams', ext: '.svg', dest: join(root, 'assets', 'diagrams', 'thesium') },
+  { repo: join(ws, 'miniforge'), src: 'docs/architecture/ariadne/diagrams', ext: '.svg', dest: join(root, 'assets', 'diagrams', 'thesium') },
   { repo: join(ws, 'miniforge'), src: 'docs/architecture/explainers', ext: '.html', dest: join(root, 'architectures'), rename: STORY_DEST },
-  { repo: join(ws, 'thesium-career'), src: 'docs/architecture/explainers', ext: '.html', dest: join(root, 'architectures'), rename: STORY_DEST },
+  { repo: join(ws, 'miniforge'), src: 'docs/architecture/ariadne/explainers', ext: '.html', dest: join(root, 'architectures'), rename: STORY_DEST },
 ];
 
 const git = (repo, args, opts = {}) =>

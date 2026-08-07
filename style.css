@@ -428,6 +428,21 @@ h3 { font-size: 1.25rem; font-weight: 500; }
 .viewer-stage:fullscreen .diagram.current { border: 0; }
 .viewer-stage:fullscreen .diagram.current img { min-width: 0; width: 100%; max-height: calc(100vh - 8rem); object-fit: contain; }
 
+/* Wide mode: the stage breaks out of the content frame and fills the
+   browser viewport (capped at the drawings' native 1920px width). */
+.viewer.wide .viewer-stage {
+  width: min(100vw - 3rem, 1920px);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.viewer.wide .diagram img { min-width: 0; }
+.viewer.wide .viewer-stage:fullscreen {
+  width: auto;
+  left: auto;
+  transform: none;
+}
+
 .viewer-nav {
   display: flex;
   align-items: center;
